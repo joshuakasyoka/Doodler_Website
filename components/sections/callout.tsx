@@ -12,7 +12,7 @@ export function CalloutSection({ section, context }: SectionProps<"callout">) {
               <Stack gap="xs" align="start">
                 <Heading level={headingLevel(context)} size="subhead" text={section.heading} />
                 <Text tone="muted" text={section.text} />
-                <Link href={section.link.href} icon={section.link.icon} variant="text">
+                <Link href={section.link.href} icon={section.link.icon} variant="outline">
                   {section.link.label}
                 </Link>
               </Stack>
