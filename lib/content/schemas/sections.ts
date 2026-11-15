@@ -89,7 +89,10 @@ export const mediaBanner = section("media-banner", {
 });
 
 export const proof = section("proof", {
+  /** Drawn above the quote, the first fact. */
   icon: iconName,
+  /** Drawn above the figure, the second fact. */
+  figureIcon: iconName,
   eyebrow: text,
   quote,
   figure: z.object({ value: text, text: markup }),

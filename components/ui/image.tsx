@@ -57,6 +57,8 @@ type ImageProps = Omit<VariantProps<typeof image>, "tone"> & {
   sizes: string;
   /** Only for the page's largest above-the-fold image (LCP). */
   priority?: boolean;
+  /** "portrait" re-encodes at a higher quality, so faces stay crisp. */
+  quality?: "default" | "portrait";
   /** Render in the text colour (logos). */
   ink?: boolean;
   /** Site-wide photosHidden setting, passed down from the page. */
@@ -64,7 +66,7 @@ type ImageProps = Omit<VariantProps<typeof image>, "tone"> & {
 };
 
 /** Every image on the site: next/image with reserved dimensions, AVIF/WebP and a blur placeholder. */
-export function Image({ image: img, sizes, priority, ink, photosHidden, layout, fit, radius }: ImageProps) {
+export function Image({ image: img, sizes, priority, ink, photosHidden, layout, fit, radius, quality }: ImageProps) {
   const placeholder = photosHidden && img.hideable;
   const tone = placeholder ? "placeholder" : ink ? "ink" : "default";
   const className = image({ layout, fit, radius, tone });
@@ -73,7 +75,7 @@ export function Image({ image: img, sizes, priority, ink, photosHidden, layout, 
     alt: img.decorative ? "" : img.alt,
     sizes,
     className,
-    quality: 75,
+    quality: quality === "portrait" ? 90 : 75,
     preload: priority,
     loading: priority ? ("eager" as const) : ("lazy" as const),
     fetchPriority: priority ? ("high" as const) : undefined,

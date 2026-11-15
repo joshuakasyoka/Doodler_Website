@@ -19,7 +19,7 @@ export function LogoStripSection({ section }: SectionProps<"logo-strip">) {
         </ul>
         <div className="mt-2xl">
           <Reveal>
-            <Link href={section.link.href} icon={section.link.icon}>
+            <Link href={section.link.href} icon={section.link.icon} iconEnd>
               {section.link.label}
             </Link>
           </Reveal>

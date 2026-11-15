@@ -1,4 +1,4 @@
-import { Container, Heading, Image, Link, Reveal, Section } from "@/components/ui";
+import { Button, Container, Heading, Image, Reveal, Section } from "@/components/ui";
 import { headingLevel, type SectionProps } from "./types";
 
 export function PhotoFeatureSection({ section, context }: SectionProps<"photo-feature">) {
@@ -20,9 +20,7 @@ export function PhotoFeatureSection({ section, context }: SectionProps<"photo-fe
         </div>
         <div className="mt-2xl">
           <Reveal>
-            <Link href={section.link.href} icon={section.link.icon}>
-              {section.link.label}
-            </Link>
+            <Button href={section.link.href} icon={section.link.icon} label={section.link.label} variant="primary" />
           </Reveal>
         </div>
       </Container>

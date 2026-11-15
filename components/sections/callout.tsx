@@ -5,13 +5,13 @@ export function CalloutSection({ section, context }: SectionProps<"callout">) {
   return (
     <Section id={section.id} space="after">
       <Container align="center">
-        <div className="w-full max-w-photo text-left">
+        <div className="w-full max-w-photo text-center">
           <Reveal>
-            <Card radius="lg" pad="callout" gap="xs">
+            <Card radius="lg" pad="callout" gap="xs" align="center">
               <Icon name={section.icon} size="panel" draw />
-              <Stack gap="xs" align="start">
-                <Heading level={headingLevel(context)} size="subhead" text={section.heading} />
-                <Text tone="muted" text={section.text} />
+              <Stack gap="xs" align="center">
+                <Heading level={headingLevel(context)} size="subhead" align="center" text={section.heading} />
+                <Text tone="muted" align="center" text={section.text} />
                 <Link href={section.link.href} icon={section.link.icon} variant="outline">
                   {section.link.label}
                 </Link>

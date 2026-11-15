@@ -20,7 +20,7 @@ export const en: Readonly<Record<string, string>> = {
   "Maak in 30 seconden een doodle: een praatplaat van wat jij en je cliënt bespreken. Geef het mee naar huis en help je cliënt de regie te nemen.":
     "Make a doodle in 30 seconds: a visual of what you and your client discuss. Send it home with them and help your client take control.",
   "Plan een demo": "Schedule a demo",
-  "Al in de behandelkamer bij:": "Already in the treatment room at:",
+  "Al in de behandelkamer bij": "Already in the treatment room at",
   "Lees hun verhalen": "Read their stories",
   "Zij aan zij *met je cliënt*": "Side by side *with your client*",
   "Met een doodle hebben jij en je cliënt letterlijk hetzelfde beeld voor ogen. Zo werk je makkelijker samen aan één doel.":

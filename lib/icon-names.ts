@@ -1,6 +1,7 @@
 /** Every symbol in public/icons/sprite.svg. Kept in sync by tests/unit/icons.test.ts. */
 export const iconNames = [
   "arrow-link",
+  "arrow-right",
   "arrow-up",
   "badge-check",
   "book-open",
@@ -24,6 +25,7 @@ export const iconNames = [
   "menu",
   "paper-download",
   "pencils",
+  "papers-pencil",
   "people-doodle",
   "play",
   "plus",
@@ -66,6 +68,7 @@ export type IconName = (typeof iconNames)[number];
 /** Each symbol's viewBox, so an icon keeps its own proportions. */
 export const iconViewBoxes: Record<IconName, string> = {
   "arrow-link": "0 0 24 24",
+  "arrow-right": "0 0 24 24",
   "arrow-up": "0 0 24 24",
   "badge-check": "0 0 24 24",
   "book-open": "0 0 24 24",
@@ -89,6 +92,7 @@ export const iconViewBoxes: Record<IconName, string> = {
   menu: "0 0 24 24",
   "paper-download": "0 0 48 48",
   pencils: "0 0 48 48",
+  "papers-pencil": "0 0 48 48",
   "people-doodle": "0 0 48 48",
   play: "0 0 24 24",
   plus: "0 0 24 24",

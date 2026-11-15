@@ -42,7 +42,7 @@ export function Header({ site }: { site: Site }) {
                 label={action.label}
                 icon={action.icon}
                 variant={action.primary ? "pill-dark" : "pill"}
-                size="md"
+                size="pill"
                 scribble={false}
               />
             ))}

@@ -36,6 +36,7 @@ export function PeopleSection({ section, context }: SectionProps<"people">) {
                   image={person.image}
                   radius="bottom"
                   sizes={sizes}
+                  quality="portrait"
                   photosHidden={context.photosHidden}
                 />
                 <Card tone="none" pad="person" gap="2xs">

@@ -33,23 +33,26 @@ type LinkProps = VariantProps<typeof link> & {
   icon?: IconName;
   label?: string;
   current?: boolean;
+  /** Put the icon after the label (an arrow) rather than before it. */
+  iconEnd?: boolean;
 };
 
 const isInternal = (href: string) => href.startsWith("/") && !href.startsWith("//");
 
 /** Every link on the site. Internal paths use client-side navigation. */
-export function Link({ href, children, icon, label, current, variant }: LinkProps) {
+export function Link({ href, children, icon, label, current, variant, iconEnd }: LinkProps) {
   const className = link({ variant });
   const underlined = variant === "text" || variant === undefined;
   const outlined = underlined || variant === "nav" || variant === "outline";
   const content = (
     <>
-      {icon && <Icon name={icon} size="sm" />}
+      {icon && !iconEnd && <Icon name={icon} size="sm" />}
       {children}
+      {icon && iconEnd && <Icon name={icon} size="sm" />}
       {underlined && (
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-md bottom-sm h-px bg-current transition-opacity group-hover:opacity-0 group-focus-visible:opacity-0"
+          className="pointer-events-none absolute inset-x-md bottom-sm h-[1.3px] bg-current transition-opacity group-hover:opacity-0 group-focus-visible:opacity-0"
         />
       )}
       {outlined && (

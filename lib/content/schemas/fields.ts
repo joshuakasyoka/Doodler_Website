@@ -97,7 +97,7 @@ export const link = z.object({
 });
 
 export const button = link.extend({
-  variant: z.enum(["primary", "light"]).default("primary"),
+  variant: z.enum(["primary", "light", "outline-light"]).default("primary"),
   size: z.enum(["md", "lg"]).default("lg"),
 });
 

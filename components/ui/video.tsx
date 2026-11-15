@@ -98,13 +98,24 @@ export function Video({ video, sizes, fit = "cover", priority, playLabel, layout
   const showVideo = mode === "autoplay" || mode === "playing";
   return (
     <div className={frame({ layout, radius })}>
-      <Image
-        image={video.poster}
-        sizes={sizes}
-        priority={priority}
-        layout={layout === "fill" ? "fill" : "intrinsic"}
-        fit={fit}
-      />
+      {/* The still sits under the video until the first frame is actually playing, then it goes away. */}
+      <div
+        className={
+          layout === "fill"
+            ? `absolute inset-0 ${visible ? "invisible" : ""}`
+            : visible
+              ? "invisible"
+              : undefined
+        }
+      >
+        <Image
+          image={video.poster}
+          sizes={sizes}
+          priority={priority}
+          layout={layout === "fill" ? "fill" : "intrinsic"}
+          fit={fit}
+        />
+      </div>
       {showVideo && (
         <video
           ref={ref}

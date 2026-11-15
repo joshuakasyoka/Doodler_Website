@@ -180,6 +180,34 @@
   display: inline-block;
 }
 
+/* proof facts stack in document order; the scroll timeline below overlays them */
+.proof-scroll {
+  padding-block: var(--spacing-section-lg);
+}
+.proof-facts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3xl);
+}
+/* stacked (no scroll timelines): one source line, under the last fact */
+.proof-source-1 {
+  display: none;
+}
+/* both facts' icons share one slot above the eyebrow */
+.proof-marks {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+.proof-fact {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
 /* ---------- scroll-linked effects (CSS scroll-driven animations; static where unsupported) ---------- */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: scroll()) {
@@ -201,6 +229,91 @@
       animation-timeline: view();
       animation-range: entry 0% cover 50%;
     }
+
+    /*
+     * Home proof: the stage sticks for about one extra screen. The first fact
+     * holds, then the second replaces it. Each icon draws as its fact arrives.
+     */
+    .proof-scroll {
+      height: 220svh;
+      padding-block: 0;
+      view-timeline-name: --proof;
+      view-timeline-axis: block;
+    }
+    .proof-stage {
+      position: sticky;
+      top: 0;
+      display: flex;
+      box-sizing: border-box;
+      height: 100svh;
+      align-items: center;
+      padding-top: var(--spacing-header);
+    }
+    .proof-facts {
+      display: grid;
+      align-items: start;
+      gap: 0;
+    }
+    .proof-fact {
+      grid-area: 1 / 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-lg);
+    }
+    .proof-fact-1 {
+      animation: proof-out ease-in-out both;
+      animation-timeline: --proof;
+      animation-range: cover 0% cover 100%;
+    }
+    .proof-fact-2 {
+      animation: proof-in ease-in-out both;
+      animation-timeline: --proof;
+      animation-range: cover 0% cover 100%;
+    }
+    /* the eyebrow and source dip out and back with the switch, so the whole block changes together */
+    .proof-dip {
+      animation: proof-dip ease-in-out both;
+      animation-timeline: --proof;
+      animation-range: cover 0% cover 100%;
+    }
+    .proof-source-1 {
+      display: block;
+    }
+    .proof-marks {
+      display: grid;
+      justify-items: center;
+    }
+    .proof-mark {
+      grid-area: 1 / 1;
+    }
+    .proof-mark-1 {
+      animation: proof-out ease-in-out both;
+      animation-timeline: --proof;
+      animation-range: cover 0% cover 100%;
+    }
+    .proof-mark-2 {
+      animation: proof-in ease-in-out both;
+      animation-timeline: --proof;
+      animation-range: cover 0% cover 100%;
+    }
+    /* each icon draws with the scroll: the first as the section rises into
+       place and sticks, the second as its fact arrives (data-draw is the
+       fallback where scroll timelines are missing) */
+    .proof-mark svg {
+      stroke-dasharray: 1 2;
+      stroke-dashoffset: 1.05;
+    }
+    .proof-mark-1 svg {
+      animation: proof-draw linear both;
+      animation-timeline: --proof;
+      animation-range: cover 16% cover 34%;
+    }
+    .proof-mark-2 svg {
+      animation: proof-draw linear both;
+      animation-timeline: --proof;
+      animation-range: cover 51% cover 64%;
+    }
   }
 }
 @keyframes uncover {
@@ -220,6 +333,59 @@
   from {
     transform: scale(0.9);
     border-radius: 7.5rem;
+  }
+}
+/* first fact holds, then leaves; the second waits and comes in just after */
+/* the stage sticks from about 31% to 69% of the scroll; the quote lifts away
+   and the figure rises in across the middle of that, with a short pause between */
+@keyframes proof-out {
+  0%,
+  38% {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0);
+  }
+  48%,
+  100% {
+    opacity: 0;
+    translate: 0 -1.5rem;
+    filter: blur(4px);
+  }
+}
+@keyframes proof-in {
+  0%,
+  51% {
+    opacity: 0;
+    translate: 0 1.5rem;
+    filter: blur(4px);
+  }
+  61%,
+  100% {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0);
+  }
+}
+@keyframes proof-dip {
+  0%,
+  38%,
+  61%,
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  48%,
+  51% {
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+@keyframes proof-draw {
+  from {
+    stroke-dashoffset: 1.05;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
@@ -276,31 +442,18 @@
 
 /* typographic quotation marks round a pull quote (punctuation, not copy) */
 @utility quoted {
+  &::before,
+  &::after {
+    /* a little bigger than the text, without opening up the line */
+    font-size: 1.35em;
+    line-height: 0;
+    vertical-align: -0.08em;
+  }
   &::before {
     content: "\201C";
   }
   &::after {
     content: "\201D";
-  }
-}
-
-/* the wordmark's pencil draws a line underneath on hover (components/ui/logo.tsx) */
-.logo-line {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 0.8;
-  stroke-linecap: round;
-  stroke-dasharray: 1 2;
-  stroke-dashoffset: 1.05;
-  transition: stroke-dashoffset 0.7s var(--ease-draw);
-}
-.logo-mark:hover .logo-line,
-a:focus-visible .logo-mark .logo-line {
-  stroke-dashoffset: 0;
-}
-@media (prefers-reduced-motion: reduce) {
-  .logo-line {
-    transition: none;
   }
 }
 

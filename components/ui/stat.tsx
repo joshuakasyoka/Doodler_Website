@@ -32,8 +32,8 @@ export function Stat({ value, label, labelLevel, align, inline, card }: StatProp
   }
   if (inline)
     return (
-      <p className="mx-auto max-w-measure text-center font-display text-subhead">
-        <strong className="font-medium">{value}</strong> <RichText value={label} />
+      <p className="mx-auto w-full text-center font-display text-balance text-quote font-normal">
+        <strong className="font-normal">{value}</strong> <RichText value={label} />
       </p>
     );
   const Label = labelLevel ? (`h${labelLevel}` as const) : "p";

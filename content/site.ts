@@ -19,8 +19,8 @@ export const site = {
       { label: "Over ons", href: "/over-ons" },
     ],
     actions: [
-      { label: "Demo", href: "/product#demo", icon: "chat" },
-      { label: "Login", href: "https://start.doodler.app", icon: "user", primary: true },
+      { label: "Demo", href: "/product#demo" },
+      { label: "Login", href: "https://start.doodler.app", primary: true },
     ],
     languageToggle: { label: "EN", ariaLabel: "Switch to English", hidden: true },
   },

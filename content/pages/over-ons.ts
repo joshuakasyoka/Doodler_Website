@@ -121,11 +121,10 @@ export const overOns = {
         {
           name: "Joshua Green",
           role: "Designer",
-          hidden: true,
           bio: "Joshua Green doet een PhD over de ethische aspecten van AI aan de University of the Arts London.",
           image: {
             src: "/images/over-ons/team-joshua-green.webp",
-            alt: "Getekend portret van Joshua Green",
+            alt: "Portret van Joshua Green",
             width: 800,
             height: 800,
           },
@@ -154,8 +153,8 @@ export const overOns = {
           image: {
             src: "/images/over-ons/advies-siep-kosse.webp",
             alt: "Siep Kosse",
-            width: 400,
-            height: 400,
+            width: 1000,
+            height: 1000,
           },
           linkedin: { href: "#", label: "Siep Kosse op LinkedIn" }, // TODO(link)
         },
@@ -166,8 +165,8 @@ export const overOns = {
           image: {
             src: "/images/over-ons/advies-ayala-ohyon.webp",
             alt: "Ayala Ohyon",
-            width: 500,
-            height: 500,
+            width: 1000,
+            height: 1000,
           },
           linkedin: { href: "#", label: "Ayala Ohyon op LinkedIn" }, // TODO(link)
         },

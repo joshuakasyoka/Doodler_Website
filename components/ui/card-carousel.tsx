@@ -17,6 +17,8 @@ type CarouselCard = {
 type CardCarouselProps = { cards: CarouselCard[]; label: string };
 
 const TURN_MS = 3200;
+/** The first turn, counted from when the carousel comes on screen. */
+const FIRST_TURN_MS = 900;
 
 /**
  * A row of cards with one open in the middle; the row moves on by one every
@@ -34,14 +36,23 @@ export function CardCarousel({ cards, label }: CardCarouselProps) {
     const el = stage.current;
     if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let timer: ReturnType<typeof setInterval> | undefined;
+    let first: ReturnType<typeof setTimeout> | undefined;
+    const turn = () => {
+      if (!paused.current) setAt((v) => (v + 1) % n);
+    };
     const start = () => {
-      if (timer !== undefined) return; // already turning: keep its rhythm
-      timer = setInterval(() => {
-        if (!paused.current) setAt((v) => (v + 1) % n);
-      }, TURN_MS);
+      if (timer !== undefined || first !== undefined) return; // already turning: keep its rhythm
+      // the first turn comes soon after it appears, then the usual rhythm
+      first = setTimeout(() => {
+        first = undefined;
+        turn();
+        timer = setInterval(turn, TURN_MS);
+      }, FIRST_TURN_MS);
     };
     const stop = () => {
+      clearTimeout(first);
       clearInterval(timer);
+      first = undefined;
       timer = undefined;
     };
     const io = new IntersectionObserver(([entry]) => (entry?.isIntersecting ? start() : stop()), {

@@ -76,7 +76,7 @@ export const home = {
     },
     {
       type: "logo-strip",
-      label: "Al in de behandelkamer bij:",
+      label: "Al in de behandelkamer bij",
       logos: [
         {
           name: "GGz Centraal",
@@ -99,7 +99,7 @@ export const home = {
           },
         },
       ],
-      link: { label: "Lees hun verhalen", href: "/onderzoek", icon: "book-open" },
+      link: { label: "Lees hun verhalen", href: "/onderzoek" },
     },
     {
       type: "media-banner",
@@ -112,11 +112,11 @@ export const home = {
           src: "/images/home/banner-behandelkamer.webp",
           alt: "",
           decorative: true,
-          width: 1024,
-          height: 687,
+          width: 1920,
+          height: 1080,
         },
-        width: 1280,
-        height: 720,
+        width: 1920,
+        height: 1080,
       },
       signup: {
         label: "Je e-mailadres",
@@ -128,7 +128,8 @@ export const home = {
     {
       type: "proof",
       id: "bewijs",
-      icon: "speech-bubbles",
+      icon: "papers-pencil",
+      figureIcon: "people-doodle",
       eyebrow: "Uit het pilotonderzoek",
       quote: {
         text: "Het verlevendigt het gesprek en geeft houvast voor alle partijen.",
@@ -178,8 +179,7 @@ export const home = {
       cta: {
         label: "Bekijk de templates",
         href: "/product#toepassingen",
-        icon: "templates",
-        variant: "light",
+        variant: "outline-light",
       },
     },
     {

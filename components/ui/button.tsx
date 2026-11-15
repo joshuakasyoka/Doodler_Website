@@ -16,6 +16,9 @@ export const buttonStyles = cva(
         pill: "bg-surface text-text shadow-pill hover:bg-surface-hover",
         /** outlined in ink; fills when its card is hovered (price cards) */
         card: "border border-ink bg-transparent text-text group-hover:bg-ink group-hover:text-text-on-media",
+        /** outlined in white on a dark section; fills white on hover */
+        "outline-light":
+          "border border-on-media-line bg-transparent text-text-on-media hover:border-text-on-media hover:bg-surface hover:text-text",
         /** the header's black Login pill */
         "pill-dark": "bg-ink text-text-on-media hover:bg-ink-hover",
       },
@@ -23,6 +26,8 @@ export const buttonStyles = cva(
         sm: "h-control-sm px-sm text-small",
         /** header pills: 40px, 14px text */
         md: "h-pill px-xs text-small",
+        /** the header's Demo and Login pills: 40px, 14px text, roomier sides */
+        pill: "h-pill px-md text-small",
         lg: "h-control-lg px-md text-body",
         /** 44px, 15px text (price cards) */
         card: "h-control px-sm text-ui",
