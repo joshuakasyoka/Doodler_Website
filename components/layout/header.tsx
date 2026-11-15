@@ -1,4 +1,4 @@
-import { Button, Container, Icon, Link } from "@/components/ui";
+import { Button, Container, Link, Logo } from "@/components/ui";
 import type { Site } from "@/lib/content";
 import { HeaderTone } from "./header-tone";
 import { MobileMenu } from "./mobile-menu";
@@ -20,7 +20,7 @@ export function Header({ site }: { site: Site }) {
       <Container size="full">
         <div className="relative flex items-center justify-between gap-sm lg:grid lg:grid-cols-3">
           <Link href="/" label={header.logoLabel} variant="plain">
-            <Icon name="logo" size="logo" />
+            <Logo />
           </Link>
           <nav aria-label={header.navLabel} className="hidden justify-self-center lg:block">
             <ul className="flex items-center gap-2xs">{links}</ul>

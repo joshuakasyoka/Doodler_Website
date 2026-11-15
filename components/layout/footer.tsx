@@ -1,4 +1,4 @@
-import { Container, Icon, Link, Reveal, Text } from "@/components/ui";
+import { Container, Link, Logo, Reveal, Text } from "@/components/ui";
 import type { Site } from "@/lib/content";
 
 export function Footer({ site }: { site: Site }) {
@@ -8,7 +8,7 @@ export function Footer({ site }: { site: Site }) {
       <Container>
         <div className="text-panel">
           <Reveal variant="clip">
-            <Icon name="logo" size="wordmark" label={footer.wordmarkLabel} />
+            <Logo size="full" label={footer.wordmarkLabel} />
           </Reveal>
         </div>
         <nav aria-label={footer.navLabel} className="mt-lg">

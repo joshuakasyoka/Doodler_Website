@@ -27,3 +27,4 @@ export { Wheel } from "./wheel";
 export { CardCarousel } from "./card-carousel";
 export { PencilSign } from "./pencil-sign";
 export { ReadMore } from "./read-more";
+export { Logo } from "./logo";

@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { iconViewBoxes, type IconName } from "@/lib/icon-names";
 
 /** Bump when public/icons/sprite.svg changes, so browsers fetch the new file. */
-const SPRITE = "/icons/sprite.svg?v=9";
+export const SPRITE = "/icons/sprite.svg?v=9";
 
 const icon = cva("shrink-0 overflow-visible", {
   variants: {

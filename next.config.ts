@@ -36,13 +36,7 @@ const nextConfig: NextConfig = {
     return legacyRedirects.map((r) => ({ ...r, permanent: true }));
   },
   turbopack: {
-    root: import.meta.dirname,
-    rules: {
-      "globals.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
+    root: process.cwd(),
   },
 };
 
