@@ -1,0 +1,10 @@
+.next
+node_modules
+package-lock.json
+public
+assets-source
+test-results
+playwright-report
+lighthouse
+app/fonts
+COPY-AUDIT.md

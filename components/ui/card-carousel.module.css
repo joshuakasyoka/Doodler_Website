@@ -1,0 +1,166 @@
+/* the product template carousel, after the original's .tplc-* styles */
+.stage {
+  --open-w: min(27.5rem, 86vw);
+  --fold-w: min(18.75rem, 62vw);
+  --step: calc(var(--open-w) / 2 + var(--fold-w) / 2 + 1.5rem);
+  position: relative;
+  height: var(--spacing-carousel);
+  /* no clipping here: the open card's shadow fades out softly; the rounded panel round the section clips the cards that slide away */
+}
+.track {
+  list-style: none;
+}
+.card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  width: var(--fold-w);
+  height: 9.375rem;
+  overflow: hidden;
+  border-radius: var(--radius-card-lg);
+  border: 1px solid var(--color-on-media-line);
+  background: rgb(255 255 255 / 0.42);
+  transform: translate(calc(-50% + var(--d) * var(--step)), -50%);
+  transition:
+    transform 0.9s var(--ease-draw),
+    width 0.9s var(--ease-draw),
+    height 0.9s var(--ease-draw),
+    opacity 0.6s ease,
+    background-color 0.6s ease;
+  will-change: transform;
+}
+.d-2 {
+  --d: -2;
+}
+.d-1 {
+  --d: -1;
+}
+.d0 {
+  --d: 0;
+}
+.d1 {
+  --d: 1;
+}
+.d2 {
+  --d: 2;
+}
+.open {
+  z-index: 2;
+  width: var(--open-w);
+  height: 20rem;
+  border-color: transparent;
+  background: var(--color-tile);
+  box-shadow: var(--shadow-lift);
+}
+.away {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}
+.head {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.625rem;
+  min-height: 2.75rem;
+  margin: 0.875rem 0.875rem 0;
+  padding: 0.75rem 1.125rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-card);
+  line-height: var(--text-card--line-height);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+}
+.plus {
+  display: grid;
+  margin-left: auto;
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
+}
+.open .plus {
+  transform: rotate(45deg);
+  opacity: 0.5;
+}
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0.875rem;
+}
+.grid {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  min-height: 0;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  opacity: 0;
+  transition: opacity 0.5s ease 0.3s;
+}
+.one {
+  grid-template-columns: 1fr;
+}
+.open .grid {
+  opacity: 1;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-height: 0;
+  padding: 0.375rem;
+  border: 1px solid var(--color-tile-line);
+  border-radius: var(--radius-tile);
+  background: var(--color-surface);
+}
+.img {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border-radius: var(--radius-tile);
+  background: var(--color-tile);
+  overflow: hidden;
+}
+.img img {
+  padding: 0.5rem;
+}
+.caption {
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: var(--text-caption);
+  line-height: var(--text-caption--line-height);
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.desc {
+  max-width: var(--container-desc);
+  min-height: 3em;
+  margin: clamp(1.75rem, 3vw, 2.25rem) auto 0;
+  font-family: var(--font-body);
+  font-size: var(--text-desc);
+  line-height: var(--text-desc--line-height);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+.descTitle {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  font-size: var(--text-desc-title);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}

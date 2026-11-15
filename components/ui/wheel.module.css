@@ -1,0 +1,42 @@
+/* the template wheel: big lines of text, the current one bright in the middle */
+.window {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: var(--spacing-wheel);
+  overflow: hidden;
+  mask-image: linear-gradient(transparent 4%, #000 30%, #000 70%, transparent 96%);
+}
+.list {
+  position: absolute;
+  inset: 50% 0 auto;
+  will-change: transform;
+}
+.turn {
+  transition: transform 0.9s var(--ease-draw);
+}
+.item {
+  padding: 0.38em 0;
+  font-family: var(--font-display);
+  font-size: var(--text-wheel);
+  line-height: var(--text-wheel--line-height);
+  letter-spacing: var(--text-wheel--letter-spacing);
+  text-wrap: balance;
+  /* the original used 0.28; 0.5 keeps the dimmed items at AA contrast (5.3:1) */
+  opacity: 0.5;
+  transition: opacity 0.35s ease;
+}
+.on {
+  opacity: 1;
+}
+/* "binnenkort" beside items that are coming soon */
+.note {
+  display: inline-block;
+  margin-left: 0.6em;
+  padding: 0.2em 0.55em;
+  border: 1px solid var(--color-on-ink-line);
+  border-radius: 6px;
+  font-size: 0.3em;
+  letter-spacing: 0;
+  vertical-align: middle;
+}

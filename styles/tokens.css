@@ -1,0 +1,307 @@
+/*
+ * Design tokens: the single source of every colour, type size, space, radius,
+ * breakpoint and motion value on the site.
+ *
+ * `--*: initial` removes Tailwind's default theme, so ONLY the tokens below
+ * exist as utilities (`bg-surface`, `p-md`, `text-title`, `rounded-lg`, `md:`…).
+ * A utility that isn't backed by a token simply won't generate, and ESLint
+ * rejects arbitrary values (`w-[37px]`), so new values must be added here.
+ *
+ * Tailwind exposes each token as a CSS variable (`var(--color-text)`), which
+ * co-located CSS (e.g. the hero animation) uses too.
+ */
+@theme {
+  --*: initial;
+
+  /* ---------- Breakpoints (mobile first, from 320px) ---------- */
+  --breakpoint-sm: 30rem; /* 480px */
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-lg: 64rem; /* 1024px */
+  --breakpoint-xl: 80rem; /* 1280px */
+
+  /* ---------- Colour ---------- */
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-bg: #fffbf6; /* main content: a very light tint of #FCEFDC */
+  --color-page: #ffffff; /* behind the content, seen round its rounded bottom and under the footer */
+  --color-stage: #fcefdc; /* the hero animation panel */
+  --color-surface: #ffffff;
+  --color-surface-hover: #ededed;
+  --color-panel: #ececea;
+  --color-placeholder: #d6d6d3;
+  --color-media: #8a8a86; /* full-bleed photo / video blocks */
+  --color-text: #141210;
+  --color-text-muted: #6f6d69; /* 5.0:1 on --color-bg (AA) */
+  --color-text-on-media: #ffffff;
+  --color-text-on-ink-muted: #a8a6a2; /* 7.4:1 on --color-ink */
+  --color-on-media-line: rgb(255 255 255 / 0.7); /* outlines on photos */
+  --color-on-ink-line: rgb(255 255 255 / 0.35);
+  --color-tile: #fbfbfb; /* behind doodles */
+  --color-tile-line: #e9e9e9;
+  --color-ink: #141210; /* the dark panels and primary buttons */
+  --color-ink-hover: #3a3836;
+  --color-border: #e2e2df;
+  --color-scrim: rgb(20 18 16 / 0.45); /* text legibility over media */
+  --color-focus: #1f5fd6; /* focus ring, 3:1+ on every surface */
+
+  /* ---------- Type ---------- */
+  --font-display: var(--font-bricolage), system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+
+  /* fluid scale: clamp(min, preferred, max) */
+  --text-display: clamp(2.5rem, 5.6vw + 0.5rem, 5rem); /* home hero */
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.04em;
+  --text-title: clamp(1.875rem, 4.5vw, 3.375rem); /* section and page titles */
+  --text-title--line-height: 1.06;
+  --text-title--letter-spacing: -0.035em;
+  --text-quote: clamp(1.75rem, 3vw, 2.625rem); /* the home proof quote */
+  --text-quote--line-height: 1.15;
+  --text-quote--letter-spacing: -0.025em;
+  --text-wheel: clamp(1.75rem, 3.6vw, 3.25rem); /* the turning template list */
+  --text-wheel--line-height: 1.1;
+  --text-wheel--letter-spacing: -0.03em;
+  --text-label: 1.25rem; /* "Al in de behandelkamer bij:" */
+  --text-label--line-height: 1.5;
+  --text-pull: clamp(1.625rem, 2.6vw, 2.25rem); /* pull quotes on inner pages */
+  --text-pull--line-height: 1.2;
+  --text-pull--letter-spacing: -0.02em;
+  --text-desc-title: 1.375rem; /* the carousel's caption title */
+  --text-desc-title--line-height: 1.5;
+  --text-desc: 1.125rem; /* the carousel's caption */
+  --text-desc--line-height: 1.5;
+  --text-question: 1.0625rem; /* FAQ questions */
+  --text-question--line-height: 1.5;
+  --text-card: 1rem; /* card heading pills */
+  --text-card--line-height: 1.3;
+  --text-caption: 0.75rem; /* doodle tile captions */
+  --text-caption--line-height: 1.3;
+  --text-statement: clamp(1.625rem, 3.4vw, 2.625rem); /* manifest statements */
+  /* the manifest pages (Veiligheid, Onderzoek, Over ons) */
+  --text-manifest-title: clamp(2.25rem, 3.6vw, 3.25rem); /* 52px page titles */
+  --text-manifest-title--line-height: 1.1;
+  --text-manifest-title--letter-spacing: -0.035em;
+  --text-manifest: clamp(1.75rem, 2.8vw, 2.5rem); /* 40px statements */
+  --text-manifest--line-height: 1.06;
+  --text-manifest--letter-spacing: -0.035em;
+  --text-step: clamp(1.5rem, 2.3vw, 2rem); /* 32px timeline steps */
+  --text-step--line-height: 1.06;
+  --text-step--letter-spacing: -0.035em;
+  --text-manifest-lead: clamp(1.0625rem, 1.4vw, 1.25rem); /* 20px */
+  --text-manifest-lead--line-height: 1.55;
+  --text-stat-xl: clamp(3rem, 5vw, 4.5rem); /* 72px finding figures */
+  --text-stat-xl--line-height: 1;
+  --text-stat-xl--letter-spacing: -0.045em;
+  --text-stat-label: 1.0625rem; /* 17px */
+  --text-stat-label--line-height: 1.3;
+  --text-amount: clamp(2rem, 2.7vw, 2.375rem); /* 38px prices */
+  --text-amount--line-height: 1.05;
+  --text-amount--letter-spacing: -0.03em;
+  --text-name: 1.125rem; /* people's names */
+  --text-name--line-height: 1.2;
+  --text-statement--line-height: 1.15;
+  --text-statement--letter-spacing: -0.025em;
+  --text-stat: clamp(3rem, 7vw, 5rem); /* big figures */
+  --text-stat--line-height: 1;
+  --text-stat--letter-spacing: -0.04em;
+  --text-subhead: clamp(1.25rem, 2vw, 1.5rem); /* card and sub-section titles */
+  --text-subhead--line-height: 1.2;
+  --text-subhead--letter-spacing: -0.01em;
+  --text-lead: clamp(1rem, 1.5vw, 1.1875rem); /* subtitles under titles */
+  --text-lead--line-height: 1.5;
+  --text-body: 1rem;
+  --text-body--line-height: 1.5;
+  --text-ui: 0.9375rem; /* the menu links */
+  --text-ui--line-height: 1.2;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.45;
+  --text-fine: 0.8125rem; /* footer links, sources */
+  --text-fine--line-height: 1.5;
+  --text-eyebrow: 0.8125rem;
+  --text-eyebrow--line-height: 1.3;
+  --text-eyebrow--letter-spacing: 0.08em;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;
+
+  --leading-none: 1;
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+
+  /* ---------- Spacing ---------- */
+  --spacing-0: 0px;
+  --spacing-px: 1px;
+  --spacing-3xs: 0.125rem; /* 2px */
+  --spacing-2xs: 0.25rem; /* 4px */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 2.5rem; /* 40px */
+  --spacing-3xl: 3.5rem; /* 56px */
+  --spacing-4xl: 5rem; /* 80px */
+  --spacing-gutter: clamp(1rem, 4vw, 2.5rem); /* page side padding */
+  --spacing-section: clamp(3.5rem, 8vw, 7rem); /* top and bottom of a section */
+  --spacing-page-top: clamp(8.5rem, 12.5vw, 11.25rem); /* space above a page title, under the fixed header */
+  --spacing-page-top-sm: clamp(7.5rem, 8.6vw, 7.75rem); /* the product page's title sits higher */
+  --spacing-5xl: 6rem; /* 96px */
+  --spacing-6xl: 8rem; /* 128px */
+  --spacing-section-lg: clamp(6rem, 11vw, 10rem); /* the roomier home sections */
+  --spacing-inset: 1rem; /* inset of the near-full-width panels */
+  --spacing-head: clamp(2rem, 4vw, 3.5rem); /* section heading to content */
+  --spacing-header: 6.25rem; /* height of the fixed header */
+  --spacing-header-pad: 1.625rem; /* header top and bottom padding */
+  --spacing-header-x: clamp(1rem, 2.1vw, 1.875rem); /* header side padding */
+  --spacing-thread: clamp(8.75rem, 16vw, 14.5rem); /* drawn connector lines */
+  --spacing-thread-tall: clamp(11.25rem, 26vw, 23.25rem);
+  --spacing-thread-mid: clamp(11.25rem, 24vw, 21.5625rem);
+  --spacing-polaroid: 20.4375rem; /* 327px manifest photos */
+  --spacing-thread-gap: 2.25rem; /* space round the drawn lines */
+  --spacing-card-pad: 1.75rem; /* 28px price and finding cards */
+  --spacing-person-x: 1.125rem;
+  --spacing-person-b: 1.375rem;
+  --spacing-check: 1.75rem; /* the round check marks */
+  --spacing-tick: 1.375rem; /* indent for ticked list items */
+  /* control and icon sizes */
+  --spacing-control-sm: 2.25rem;
+  --spacing-control: 2.75rem;
+  --spacing-control-lg: 3rem; /* 48px: the buttons */
+  --spacing-pill: 2.5rem; /* 40px: the header pills */
+  --spacing-icon-sm: 1rem;
+  --spacing-icon: 1.5rem;
+  --spacing-icon-lg: 2.75rem;
+  --spacing-icon-xl: 4rem;
+  --spacing-icon-mark: 4.375rem; /* the proof speech bubbles */
+  --spacing-icon-panel: 3.75rem; /* drawn icons on panels and cards */
+  --spacing-plus: 1.75rem; /* the FAQ plus circle */
+  --spacing-faq-x: 1.625rem;
+  --spacing-faq-y: 1.375rem;
+  --spacing-icon-xs: 0.75rem;
+  --spacing-tag-x: 0.875rem;
+  --spacing-tag-y: 1.125rem;
+  --spacing-callout: 2.75rem;
+  --spacing-final: 40rem; /* min height of the dark CTA panel */
+  --spacing-carousel: 21.25rem; /* height of the template carousel stage */
+  --spacing-dot: 3.25rem; /* the white circles on the flow line */
+  --spacing-dot-icon: 1.625rem;
+  --spacing-icon-sign: clamp(15.5rem, 24vw, 20rem); /* drawn page-intro signs */
+  --spacing-logo: 6.5rem; /* header wordmark width */
+  --spacing-logo-lg: 10rem; /* footer wordmark width */
+  /* partner logo heights, balanced by hand per logo as on the original site; 80% on phones */
+  --spacing-partner-sm: 1.4rem; /* 22.4px */
+  --spacing-partner-sm-lg: 1.75rem; /* 28px: wide wordmarks */
+  --spacing-partner-md: 2rem; /* 32px */
+  --spacing-partner-md-lg: 2.5rem; /* 40px */
+  --spacing-partner-lg: 2.2rem; /* 35.2px */
+  --spacing-partner-lg-lg: 2.75rem; /* 44px: compact marks */
+  --spacing-partner-card: 6rem; /* partner card height, phones */
+  --spacing-partner-card-lg: 7.5rem; /* from 768px */
+  --spacing-portrait: 8rem;
+  --spacing-banner: 43.75rem; /* min height of the media banner */
+  --spacing-wheel: clamp(20rem, 46vw, 41.625rem); /* height of the template panel */
+  --spacing-signup: 22.5rem; /* the banner's email pill */
+  --spacing-step-1: 1.875rem; /* the flow steps' stagger */
+  --spacing-step-2: 5.625rem;
+  --spacing-card: min(85vw, 30rem); /* carousel card width */
+
+  /* ---------- Widths ---------- */
+  --container-bleed: 90rem; /* 1440px: near-full-width panels */
+  --container-content: 75rem; /* 1200px page width */
+  --container-logos: 55rem; /* 880px partner row */
+  --container-tour: min(68.75rem, calc(52svh * 1.6)); /* the product tour video: fits the screen height */
+  --container-tags: 60rem; /* 960px */
+  --container-faq: 50rem; /* 800px */
+  --container-desc: 32.5rem; /* 520px */
+  --container-lead-wide: 66ch;
+  --container-manifest: 52.125rem; /* 834px */
+  --container-statement: 54.7rem; /* 875px */
+  --container-manifest-lead: 44.8rem; /* 717px */
+  --container-manifest-text: 41.15rem; /* 658px */
+  --container-manifest-follow: 37.9rem; /* 607px */
+  --container-findings: 56.25rem; /* 900px */
+  --container-section-head: 56.25rem; /* 900px section heads */
+  --container-intro: 36rem; /* the trial page's intro paragraphs */
+  --container-proof: 53.75rem; /* 860px */
+  --container-photo: 47.5rem; /* 760px feature photo */
+  --container-wide: 64rem;
+  --container-narrow: 48rem;
+  --container-text: 40rem;
+  --container-lead: 40rem; /* 640px intro under the hero title */
+  --container-measure: 46ch;
+  --container-heading: 33.75rem; /* 540px: two-line section titles */
+  --container-title: 18ch;
+  --container-title-wide: 26ch;
+
+  /* ---------- Radii ---------- */
+  --radius-none: 0;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.5rem;
+  --radius-card: 1.25rem; /* partner cards */
+  --radius-card-lg: 1.375rem; /* carousel cards */
+  --radius-tile: 0.625rem; /* doodle tiles */
+  --radius-field: 1rem; /* the email pill */
+  --radius-lg: 2.5rem;
+  --radius-xl: 4rem;
+  --radius-pill: 999px;
+
+  /* ---------- Elevation ---------- */
+  --shadow-card: 0 1px 2px rgb(20 18 16 / 0.06), 0 8px 24px rgb(20 18 16 / 0.06);
+  --shadow-header: 0 1px 0 rgb(20 18 16 / 0.08);
+  --shadow-pill: 0 2px 10px rgb(0 0 0 / 0.12);
+  --shadow-dot: 0 6px 20px rgb(0 0 0 / 0.08);
+  --shadow-float: 0 24px 60px rgb(20 18 16 / 0.08); /* the tour video */
+  --shadow-lift: 0 24px 60px rgb(80 60 30 / 0.12); /* the open carousel card */
+  --shadow-soft: 0 30px 80px rgb(0 0 0 / 0.043); /* white cards on beige */
+  --shadow-soft-hover: 0 40px 90px rgb(0 0 0 / 0.075);
+  --shadow-photo: 0 20px 50px rgb(0 0 0 / 0.08); /* manifest photos */
+
+  /* ---------- Aspect ratios ---------- */
+  --aspect-video: 16 / 9;
+  --aspect-photo: 4 / 3;
+  --aspect-wide: 16 / 10;
+  --aspect-square: 1 / 1;
+  --aspect-doodle: 104 / 51;
+  --aspect-polaroid: 4 / 3;
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-draw: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-rise: cubic-bezier(0.215, 0.61, 0.355, 1); /* GSAP power3.out, as on the original site */
+  --default-transition-duration: 300ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --default-font-family: var(--font-body);
+
+  --animate-draw: draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) both;
+  --animate-rise: rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes float {
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+}

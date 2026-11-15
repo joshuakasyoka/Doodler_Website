@@ -1,0 +1,49 @@
+import type { NextConfig } from "next";
+import { env } from "./lib/env";
+
+/** Old static-site URLs that must keep working (301). */
+const legacyRedirects = [
+  { source: "/index.html", destination: "/" },
+  { source: "/product.html", destination: "/product" },
+  { source: "/veiligheid.html", destination: "/veiligheid" },
+  { source: "/prijzen.html", destination: "/prijzen" },
+  { source: "/onderzoek.html", destination: "/onderzoek" },
+  { source: "/over-ons.html", destination: "/over-ons" },
+  { source: "/gratis-proberen.html", destination: "/gratis-proberen" },
+  // team.html was a meta-refresh to the team section on Over ons
+  { source: "/team.html", destination: "/over-ons#team" },
+  { source: "/team", destination: "/over-ons#team" },
+];
+
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  // ~8 KB of atomic CSS: inlining it removes the render-blocking stylesheet requests on first visit
+  experimental: { inlineCss: true },
+  poweredByHeader: false,
+  images: {
+    formats: ["image/avif", "image/webp"],
+    qualities: [75],
+    deviceSizes: [360, 480, 640, 768, 1024, 1280, 1600, 1920],
+    imageSizes: [32, 64, 96, 128, 256, 384],
+    // only files under /public/images may be optimised
+    localPatterns: [{ pathname: "/images/**", search: "" }],
+    // Swap to an image CDN by setting NEXT_PUBLIC_IMAGE_CDN_URL (see lib/images/loader.ts)
+    ...(env.NEXT_PUBLIC_IMAGE_CDN_URL
+      ? { loader: "custom" as const, loaderFile: "./lib/images/loader.ts" }
+      : {}),
+  },
+  async redirects() {
+    return legacyRedirects.map((r) => ({ ...r, permanent: true }));
+  },
+  turbopack: {
+    root: import.meta.dirname,
+    rules: {
+      "globals.css": {
+        loaders: ["@tailwindcss/turbopack"],
+        as: "*.css",
+      },
+    },
+  },
+};
+
+export default nextConfig;

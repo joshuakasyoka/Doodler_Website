@@ -1,0 +1,36 @@
+.sign {
+  display: block;
+  width: var(--spacing-icon-sign);
+  height: auto;
+  margin: 0 auto 1.25rem;
+  overflow: visible;
+}
+.line {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* the pencil only appears once the script is ready to move it */
+.pen {
+  opacity: 0;
+}
+.sign[data-ready] .pen {
+  opacity: 1;
+}
+.pen :global(.sign-tilt) {
+  transform-box: fill-box;
+  transform-origin: 0 100%;
+  animation: wobble 0.4s ease-in-out infinite alternate;
+}
+@keyframes wobble {
+  to {
+    transform: rotate(-4deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pen :global(.sign-tilt) {
+    animation: none;
+  }
+}

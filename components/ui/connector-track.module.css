@@ -1,0 +1,43 @@
+/* the dotted curve through the flow steps (wide screens only) */
+.line {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+@media (min-width: 64rem) {
+  .line {
+    display: block;
+  }
+}
+.line path {
+  fill: none;
+  stroke-linecap: round;
+}
+/* round dots, 11px apart */
+.dots {
+  stroke: var(--color-text-muted);
+  stroke-width: 3;
+  stroke-dasharray: 0 11;
+  opacity: 0.45;
+}
+/* a mask that uncovers the dots from left to right */
+.ink {
+  stroke: #fff;
+  stroke-width: 10;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.6s var(--ease-draw);
+}
+.line[data-drawn] .ink {
+  stroke-dashoffset: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ink {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+}
