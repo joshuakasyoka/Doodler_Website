@@ -81,6 +81,16 @@ type Timeline = ReturnType<typeof timeline>;
 // pointer path (only the dragged file follows it)
 const OFF: [number, number] = [1330, 700];
 const PICK: [number, number] = [1170, 600];
+/**
+ * Narrow boxes zoom in on the app card (300, 104, 680 × 394), trimming the
+ * backdrop to an even 26px round it: just room for the step tabs and the edit
+ * bar, which hang a little below the card.
+ */
+const CROP = { x: 274, y: 78, w: 732, h: 446 };
+/** Below this box width (CSS px) the cropped view is used. */
+const CROP_BELOW = 640;
+/** In the cropped view the file waits over the card's bottom-right corner, inside the frame. */
+const PICK_CROP: [number, number] = [870, 470];
 const DROP: [number, number] = [640, 300];
 
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
@@ -89,11 +99,12 @@ const pop = (p: number) => 1 + 2.2 * Math.pow(p - 1, 3) + 1.2 * Math.pow(p - 1, 
 const prog = (t: number, a: number, b: number) => clamp((t - a) / (b - a));
 const within = (t: number, a: number, b: number) => t >= a && t < b;
 
-function fileAt(t: number, T: Timeline): [number, number] {
+function fileAt(t: number, T: Timeline, crop: boolean): [number, number] {
+  const pick = crop ? PICK_CROP : PICK;
   const path: [number, number, number][] = [
     [0, ...OFF],
-    [0.3, ...PICK],
-    [T.grab, ...PICK],
+    [0.3, ...pick],
+    [T.grab, ...pick],
     [T.drop - 0.1, ...DROP],
     [T.drop + 0.25, ...DROP],
   ];
@@ -114,7 +125,14 @@ const enteredAt = (step: number, T: Timeline) =>
 
 type Props = { demo: PromptDrawDemo };
 type ImgProps = ImgHTMLAttributes<HTMLImageElement>;
-type Frame = { t: number; T: Timeline; demo: PromptDrawDemo; images: Map<string, ImgProps> };
+type Frame = {
+  t: number;
+  T: Timeline;
+  demo: PromptDrawDemo;
+  images: Map<string, ImgProps>;
+  /** The narrow, zoomed-in view. */
+  crop: boolean;
+};
 
 function Spinner({ light }: { light?: boolean }) {
   return <span className={light ? `${s.spinner} ${s.spinnerLight}` : s.spinner} />;
@@ -321,8 +339,8 @@ function Card(props: Frame) {
   );
 }
 
-function DraggedFile({ t, T, demo }: Frame) {
-  const [x, y] = fileAt(t, T);
+function DraggedFile({ t, T, demo, crop }: Frame) {
+  const [x, y] = fileAt(t, T, crop);
   const o = prog(t, T.grab - 0.2, T.grab) * (1 - prog(t, T.drop, T.drop + 0.15));
   if (o <= 0) return null;
   return (
@@ -341,7 +359,7 @@ export function PromptDraw({ demo }: Props) {
   const T = timeline(demo);
   const stillAt = (T.next[0] ?? T.flowIn + 4) - 0.8;
   const box = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(0);
+  const [width, setWidth] = useState(0);
   const [t, setT] = useState(stillAt);
   const [visible, setVisible] = useState(false);
   const [reduced, setReduced] = useState(true);
@@ -349,8 +367,8 @@ export function PromptDraw({ demo }: Props) {
   useLayoutEffect(() => {
     const el = box.current;
     if (!el) return;
-    setScale(el.clientWidth / W);
-    const ro = new ResizeObserver(([entry]) => entry && setScale(entry.contentRect.width / W));
+    setWidth(el.clientWidth);
+    const ro = new ResizeObserver(([entry]) => entry && setWidth(entry.contentRect.width));
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
@@ -421,12 +439,24 @@ export function PromptDraw({ demo }: Props) {
   }, [running, T.loop]);
 
   const shown = reduced ? stillAt : t;
-  const frame: Frame = { t: shown, T, demo, images };
+  // on narrow screens the card gets the width; the backdrop is cropped round it
+  const crop = width > 0 && width < CROP_BELOW;
+  const scale = width / (crop ? CROP.w : W);
+  const frame: Frame = { t: shown, T, demo, images, crop };
   return (
-    <div ref={box} className={s.root} role="img" aria-label={demo.label}>
+    <div
+      ref={box}
+      className={s.root}
+      role="img"
+      aria-label={demo.label}
+      style={crop ? { aspectRatio: `${CROP.w} / ${CROP.h}` } : undefined}
+    >
       <div
         className={s.stage}
-        style={{ transform: `scale(${scale})`, visibility: scale ? "visible" : "hidden" }}
+        style={{
+          transform: crop ? `scale(${scale}) translate(${-CROP.x}px, ${-CROP.y}px)` : `scale(${scale})`,
+          visibility: scale ? "visible" : "hidden",
+        }}
       >
         <div className={s.inner} aria-hidden="true">
           <Stepper {...frame} />

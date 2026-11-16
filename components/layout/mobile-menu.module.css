@@ -1,0 +1,133 @@
+/* The small-screen header: a pill that widens into a card when opened. */
+
+.root {
+  display: flex;
+  justify-content: center;
+}
+/* wide screens use the full header row instead (lg, 64rem) */
+@media (min-width: 64rem) {
+  .root {
+    display: none;
+  }
+}
+
+/* a thin frosted rim round the white pill/card */
+.frame {
+  /* lets width animate between fit-content and 100% where supported; elsewhere it snaps */
+  interpolate-size: allow-keywords;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.3125rem;
+  /* closed: the buttons' corner radius; open: the larger card radius */
+  border-radius: calc(var(--radius-sm) + 0.3125rem);
+  background: rgb(255 255 255 / 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-pill);
+  transition:
+    width 0.45s var(--ease-draw, ease),
+    border-radius 0.45s var(--ease-draw, ease);
+}
+.frame[data-open] {
+  width: 100%;
+  border-radius: calc(var(--radius-md) + 0.3125rem);
+}
+
+.card {
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition: border-radius 0.45s var(--ease-draw, ease);
+}
+.frame[data-open] .card {
+  border-radius: var(--radius-md);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  height: 2.75rem;
+  padding-inline: var(--spacing-md) var(--spacing-xs);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm, 0.5rem);
+}
+
+/* a hamburger, or a close icon when open, in a square tap target */
+.toggle {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .toggle:hover {
+    background: var(--color-surface-hover);
+  }
+}
+
+/* the panel opens by animating its row from 0 to its content's height */
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s var(--ease-draw, ease);
+}
+.frame[data-open] .panel {
+  grid-template-rows: 1fr;
+}
+
+.inner {
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.frame[data-open] .inner {
+  opacity: 1;
+  transition: opacity 0.3s ease 0.15s;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+}
+
+.link {
+  display: block;
+  padding-block: var(--spacing-3xs);
+  font-family: var(--font-display);
+  font-size: var(--text-statement);
+  line-height: var(--text-statement--line-height);
+  letter-spacing: var(--text-statement--letter-spacing);
+  text-decoration: none;
+}
+.link:hover,
+.link[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1.3px;
+  text-underline-offset: 0.18em;
+}
+
+.cta {
+  padding: 0 var(--spacing-xs) var(--spacing-xs);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame,
+  .card,
+  .panel,
+  .inner,
+  .frame[data-open] .inner {
+    transition: none;
+  }
+}

@@ -157,6 +157,7 @@
   --spacing-head: clamp(2rem, 4vw, 3.5rem); /* section heading to content */
   --spacing-header: 6.25rem; /* height of the fixed header */
   --spacing-header-pad: 1.625rem; /* header top and bottom padding */
+  --spacing-line: 1.3px; /* text-link underline, the same weight as the hover outline */
   --spacing-header-x: clamp(1rem, 2.1vw, 1.875rem); /* header side padding */
   --spacing-thread: clamp(8.75rem, 16vw, 14.5rem); /* drawn connector lines */
   --spacing-thread-tall: clamp(11.25rem, 26vw, 23.25rem);

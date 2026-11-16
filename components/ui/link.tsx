@@ -52,7 +52,7 @@ export function Link({ href, children, icon, label, current, variant, iconEnd }:
       {underlined && (
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-md bottom-sm h-[1.3px] bg-current transition-opacity group-hover:opacity-0 group-focus-visible:opacity-0"
+          className="pointer-events-none absolute inset-x-md bottom-sm h-line bg-current transition-opacity group-hover:opacity-0 group-focus-visible:opacity-0"
         />
       )}
       {outlined && (

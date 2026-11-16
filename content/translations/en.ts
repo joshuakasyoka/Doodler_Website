@@ -11,6 +11,8 @@ export const en: Readonly<Record<string, string>> = {
   "Over ons": "About us",
   Demo: "Demo",
   Login: "Login",
+  Menu: "Menu",
+  Sluiten: "Close",
   Privacy: "Privacy",
   Voorwaarden: "Terms",
   Inloggen: "Log in",

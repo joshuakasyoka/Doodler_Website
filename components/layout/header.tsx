@@ -14,15 +14,15 @@ export function Header({ site }: { site: Site }) {
   return (
     <header
       id="site-header"
-      className="site-header fixed inset-x-0 top-0 z-40 py-header-pad text-text header-glass data-on-dark:text-text-on-media"
+      className="site-header fixed inset-x-0 top-0 z-40 py-xs text-text header-glass lg:py-header-pad lg:data-on-dark:text-text-on-media"
     >
       <HeaderTone />
       <Container size="full">
-        <div className="relative flex items-center justify-between gap-sm lg:grid lg:grid-cols-3">
+        <div className="relative hidden items-center gap-sm lg:grid lg:grid-cols-header">
           <Link href="/" label={header.logoLabel} variant="plain">
             <Logo />
           </Link>
-          <nav aria-label={header.navLabel} className="hidden justify-self-center lg:block">
+          <nav aria-label={header.navLabel} className="justify-self-center">
             <ul className="flex items-center gap-2xs">{links}</ul>
           </nav>
           <div className="flex items-center justify-end gap-xs">
@@ -46,13 +46,16 @@ export function Header({ site }: { site: Site }) {
                 scribble={false}
               />
             ))}
-            <MobileMenu openLabel={ui.menuOpen} closeLabel={ui.menuClose}>
-              <nav aria-label={header.navLabel}>
-                <ul className="flex flex-col">{links}</ul>
-              </nav>
-            </MobileMenu>
           </div>
         </div>
+        <MobileMenu
+          logoLabel={header.logoLabel}
+          navLabel={header.navLabel}
+          openLabel={ui.menuOpen}
+          closeLabel={ui.menuClose}
+          nav={header.nav}
+          actions={header.actions}
+        />
       </Container>
     </header>
   );

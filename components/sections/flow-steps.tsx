@@ -17,15 +17,15 @@ export function FlowStepsSection({ section, context }: SectionProps<"flow-steps"
               {section.steps.map((step, i) => (
                 <li key={step.title} className={STAGGER[i % STAGGER.length]}>
                   <Reveal>
-                    <div className="flex flex-col items-start gap-sm">
+                    <div className="flex flex-col items-center gap-sm text-center">
                       <span
                         data-dot
                         className="mb-xs grid size-dot place-items-center rounded-pill bg-surface shadow-dot"
                       >
                         <Icon name={step.icon} size="dot" draw />
                       </span>
-                      <Heading level={3} size="subhead" text={step.title} />
-                      <Text tone="muted" text={step.text} />
+                      <Heading level={3} size="subhead" align="center" text={step.title} />
+                      <Text tone="muted" align="center" text={step.text} />
                     </div>
                   </Reveal>
                 </li>

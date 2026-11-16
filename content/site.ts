@@ -43,7 +43,7 @@ export const site = {
   ui: {
     skipLink: "Naar de inhoud",
     menuOpen: "Menu",
-    menuClose: "Menu sluiten",
+    menuClose: "Sluiten",
     playVideo: "Video afspelen",
     // from the original site's script (team bios cut to three lines)
     readMore: "Lees meer",
