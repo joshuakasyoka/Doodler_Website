@@ -32,6 +32,15 @@ const nextConfig: NextConfig = {
       ? { loader: "custom" as const, loaderFile: "./lib/images/loader.ts" }
       : {}),
   },
+  // files in /public/downloads save as a file instead of opening in the browser
+  async headers() {
+    return [
+      {
+        source: "/downloads/doodler-pilotrapport.pdf",
+        headers: [{ key: "Content-Disposition", value: 'attachment; filename="Doodler pilotrapport.pdf"' }],
+      },
+    ];
+  },
   async redirects() {
     return legacyRedirects.map((r) => ({ ...r, permanent: true }));
   },

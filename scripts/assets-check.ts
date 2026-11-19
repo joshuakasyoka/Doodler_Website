@@ -14,7 +14,8 @@ import * as content from "@/content";
 
 const PUBLIC = path.join(process.cwd(), "public");
 const MEDIA_DIRS = ["images", "videos"];
-const ALLOWED_ROOT = new Set(["images", "videos", "icons"]);
+// downloads: files people save, such as the pilot report PDF (served as attachments, see next.config.ts)
+const ALLOWED_ROOT = new Set(["images", "videos", "icons", "downloads"]);
 const MAX_IMAGE_BYTES = 1024 * 1024;
 /** Full-bleed banner video is 1080p; the 1 MB image cap would force it soft. */
 const MAX_VIDEO_BYTES = 3 * 1024 * 1024;
