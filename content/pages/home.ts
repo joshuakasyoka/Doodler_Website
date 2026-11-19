@@ -128,7 +128,7 @@ export const home = {
         label: "Je e-mailadres",
         placeholder: "Je e-mailadres",
         button: "Aan de slag",
-        action: "/gratis-proberen",
+        action: "https://form.typeform.com/to/VmMHTpku",
       },
     },
     {

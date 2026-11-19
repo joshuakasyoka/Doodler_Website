@@ -85,7 +85,7 @@ export const mediaBanner = section("media-banner", {
     label: text,
     placeholder: text,
     button: text,
-    /** Where the form goes (GET); the address is not sent anywhere yet. */
+    /** The access form the address is passed on to (as the Typeform hidden field `email`). */
     action: href,
   }),
 });

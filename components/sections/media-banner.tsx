@@ -1,4 +1,5 @@
-import { Button, Container, Heading, Input, Reveal, Section, Stack, Text, Video } from "@/components/ui";
+import { Container, Heading, Reveal, Section, Stack, Text, Video } from "@/components/ui";
+import { SignupForm } from "./signup-form";
 import { headingLevel, type SectionProps } from "./types";
 
 export function MediaBannerSection({ section, context }: SectionProps<"media-banner">) {
@@ -21,22 +22,13 @@ export function MediaBannerSection({ section, context }: SectionProps<"media-ban
                 text={section.heading}
               />
               <Text size="lead" tone="dim" align="center" text={section.lead} />
-              {/* The address is not sent anywhere yet: the form only opens the trial page. */}
-              <form
+              <SignupForm
+                id={`${section.id ?? "banner"}-email`}
+                label={signup.label}
+                placeholder={signup.placeholder}
+                button={signup.button}
                 action={signup.action}
-                method="get"
-                className="mt-2xs flex w-full max-w-signup items-center gap-2xs rounded-field border border-on-media-line p-2xs"
-              >
-                <Input
-                  id={`${section.id ?? "banner"}-email`}
-                  type="email"
-                  tone="media"
-                  label={signup.label}
-                  placeholder={signup.placeholder}
-                  autoComplete="email"
-                />
-                <Button type="submit" label={signup.button} variant="light" size="md" scribble={false} />
-              </form>
+              />
             </Stack>
           </Reveal>
         </div>
