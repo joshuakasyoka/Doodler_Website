@@ -85,8 +85,15 @@ export function Button(props: ButtonProps) {
           <Inner {...props} />
         </NextLink>
       );
+    // Another site (a form, the booking calendar) opens in a new tab, so the visitor keeps this page.
+    const external = href.startsWith("https://");
     return (
-      <a href={href} className={className} rel={href.startsWith("https://") ? "noopener" : undefined}>
+      <a
+        href={href}
+        className={className}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
+      >
         <Inner {...props} />
       </a>
     );

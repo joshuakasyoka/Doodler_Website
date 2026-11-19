@@ -96,7 +96,13 @@ export function MobileMenu({ logoLabel, navLabel, openLabel, closeLabel, nav, ac
                           {item.label}
                         </NextLink>
                       ) : (
-                        <a href={item.href} className={styles.link} rel="noopener">
+                        <a
+                          href={item.href}
+                          className={styles.link}
+                          target={item.href.startsWith("https://") ? "_blank" : undefined}
+                          rel="noopener noreferrer"
+                          onClick={() => setOpen(false)}
+                        >
                           {item.label}
                         </a>
                       )}

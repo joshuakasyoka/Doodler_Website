@@ -5,6 +5,8 @@
 const tile = (src: string, height = 514) => ({ src, width: 1040, height });
 
 export const templateImages = {
+  /** krachten-1 redrawn with a book on the table: the hero animation's edit */
+  krachtenBoek: tile("/images/templates/krachten-1-boek.webp", 442),
   krachten: [
     tile("/images/templates/krachten-1.webp", 442),
     tile("/images/templates/krachten-2.webp"),

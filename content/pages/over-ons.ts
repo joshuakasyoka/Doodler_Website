@@ -92,7 +92,10 @@ export const overOns = {
             width: 800,
             height: 800,
           },
-          linkedin: { href: "#", label: "Mayra Kapteijn op LinkedIn" }, // TODO(link)
+          linkedin: {
+            href: "https://www.linkedin.com/in/mayrakapteijn/",
+            label: "Mayra Kapteijn op LinkedIn",
+          },
         },
         {
           name: "Nadine Komduur",
@@ -104,7 +107,10 @@ export const overOns = {
             width: 800,
             height: 800,
           },
-          linkedin: { href: "#", label: "Nadine Komduur op LinkedIn" }, // TODO(link)
+          linkedin: {
+            href: "https://www.linkedin.com/in/nadine-komduur-a2b83812a/",
+            label: "Nadine Komduur op LinkedIn",
+          },
         },
         {
           name: "Bram van Es",
@@ -116,7 +122,10 @@ export const overOns = {
             width: 670,
             height: 670,
           },
-          linkedin: { href: "#", label: "Bram van Es op LinkedIn" }, // TODO(link)
+          linkedin: {
+            href: "https://www.linkedin.com/in/bram-van-es-9005913/",
+            label: "Bram van Es op LinkedIn",
+          },
         },
         {
           name: "Joshua Green",
@@ -135,7 +144,10 @@ export const overOns = {
             width: 764,
             height: 764,
           },
-          linkedin: { href: "#", label: "Joshua Green op LinkedIn" }, // TODO(link)
+          linkedin: {
+            href: "https://www.linkedin.com/in/josh-green-5829641b5/",
+            label: "Joshua Green op LinkedIn",
+          },
         },
       ],
     },
@@ -156,7 +168,7 @@ export const overOns = {
             width: 1000,
             height: 1000,
           },
-          linkedin: { href: "#", label: "Siep Kosse op LinkedIn" }, // TODO(link)
+          linkedin: { href: "https://www.linkedin.com/in/siepkosse/", label: "Siep Kosse op LinkedIn" },
         },
         {
           name: "Ayala Ohyon",
@@ -168,7 +180,7 @@ export const overOns = {
             width: 1000,
             height: 1000,
           },
-          linkedin: { href: "#", label: "Ayala Ohyon op LinkedIn" }, // TODO(link)
+          linkedin: { href: "https://www.linkedin.com/in/ayalaohyon/", label: "Ayala Ohyon op LinkedIn" },
         },
       ],
     },
@@ -178,10 +190,10 @@ export const overOns = {
       size: "compact",
       icon: "pencils",
       heading: "Wil je *meetekenen?*",
-      lead: "Geen vacature die past? Schrijf ons toch: hallo@doodler.app",
+      lead: "Geen vacature die past? Schrijf ons toch: mayra@doodler.app",
       button: {
         label: "Stuur ons een e-mail",
-        href: "mailto:hallo@doodler.app?subject=Open%20sollicitatie",
+        href: "mailto:mayra@doodler.app?subject=Open%20sollicitatie",
         icon: "mail",
         variant: "light",
       },

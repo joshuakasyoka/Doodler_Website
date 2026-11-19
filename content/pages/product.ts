@@ -40,7 +40,7 @@ export const product = {
         {
           icon: "fact-fast",
           title: "Vliegensvlug klaar",
-          text: "Een doodle staat in 30 seconden klaar. Een losse tekening in een paar seconden.",
+          text: "Een doodle in 30 seconden, een losse tekening in enkele seconden.",
         },
         {
           icon: "fact-no-training",
@@ -50,12 +50,12 @@ export const product = {
         {
           icon: "fact-home",
           title: "Doelen mee naar huis",
-          text: "Geef de doodle na het gesprek mee aan de cliënt.",
+          text: "Print of deel de doodle na het gesprek.",
         },
         {
           icon: "fact-language",
           title: "In elke taal",
-          text: "Vertaal de doodle naar de taal van je cliënt.",
+          text: "Laat de doodle automatisch vertalen naar de taal van je cliënt.",
         },
       ],
       quote: {
@@ -70,12 +70,17 @@ export const product = {
           hideable: true,
         },
       },
-      cta: { label: "Download het pilotrapport", href: "/onderzoek#download", icon: "download" },
+      cta: {
+        label: "Download het pilotrapport",
+        href: "https://form.typeform.com/to/Nd4W1Pwj",
+        icon: "download",
+      },
     },
     {
       type: "template-carousel",
       id: "toepassingen",
-      heading: "Een eigen template *voor elk type gesprek*",
+      heading: "Waar gaat het gesprek *vandaag over?*",
+      lead: "Voor elk type gesprek een template dat precies past bij de inhoud van het gesprek.",
       cards: [
         {
           // the original showed this name under the carousel (a data-name attribute)
@@ -121,7 +126,11 @@ export const product = {
           tiles: [tile(templateImages.behandelplan, "Hier wil ik naartoe.")],
         },
       ],
-      footLink: { label: "Behandelaren aan het woord", href: "/onderzoek", hidden: true },
+      cta: {
+        label: "Boek een demo",
+        href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
+        variant: "primary",
+      },
     },
     {
       type: "integrations",
@@ -141,8 +150,12 @@ export const product = {
       type: "callout",
       id: "veiligheid",
       icon: "shield",
-      heading: "Veiligheid altijd in beeld",
+      heading: "Veiligheid voorop",
       text: "Wij anonimiseren alle gegevens automatisch voordat ze in AI worden ingevoerd. Data blijven in Europese datacenters en we gebruiken ze nooit om AI-modellen te trainen.",
+      badges: [
+        { icon: "badge-check", label: "ISO 27001" },
+        { icon: "badge-check", label: "NEN 7510" },
+      ],
       link: { label: "Zo gaan we om met jouw gegevens", href: "/veiligheid" },
     },
     {
@@ -171,7 +184,7 @@ export const product = {
         {
           question: "Werkt Doodler ook buiten de ggz?",
           answer:
-            "Doodler is initieel gemaakt voor de ggz. Met het Institute for Positive Health verkennen we de somatische zorg; mail [mayra@doodler.app](mailto:mayra@doodler.app).",
+            "Doodler is initieel gemaakt voor de ggz. Met onder andere het Institute for Positive Health verkennen we de somatische zorg. Wil jij samenwerken? Mail [mayra@doodler.app](mailto:mayra@doodler.app).",
         },
       ],
     },
@@ -180,8 +193,12 @@ export const product = {
       id: "demo",
       icon: "people-doodle",
       heading: "Samen doodlen?",
-      // TODO(link): the demo booking link
-      button: { label: "Boek een demo", href: "#", icon: "calendar-check", variant: "light" },
+      button: {
+        label: "Boek een demo",
+        href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
+        icon: "calendar-check",
+        variant: "light",
+      },
     },
   ],
 } satisfies PageInput;

@@ -1,6 +1,11 @@
 import type { PageInput } from "@/lib/content/schemas/site";
 
-const plan = { label: "Plan een gesprek", href: "/product#demo", variant: "primary", size: "md" } as const;
+const plan = {
+  label: "Plan een gesprek",
+  href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
+  variant: "primary",
+  size: "md",
+} as const;
 
 export const prijzen = {
   path: "/prijzen",
@@ -60,8 +65,12 @@ export const prijzen = {
       icon: "people-doodle",
       heading: "Samen doodlen?",
       lead: "In een demo van 20 minuten laten we zien hoe Doodler werkt",
-      // TODO(link): the demo booking link
-      button: { label: "Plan een demo", href: "#", icon: "calendar-check", variant: "light" },
+      button: {
+        label: "Plan een demo",
+        href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
+        icon: "calendar-check",
+        variant: "light",
+      },
     },
   ],
 } satisfies PageInput;

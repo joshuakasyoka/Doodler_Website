@@ -19,7 +19,10 @@ export const site = {
       { label: "Over ons", href: "/over-ons" },
     ],
     actions: [
-      { label: "Demo", href: "/product#demo" },
+      {
+        label: "Demo",
+        href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
+      },
       { label: "Login", href: "https://start.doodler.app", primary: true },
     ],
     languageToggle: { label: "EN", ariaLabel: "Switch to English", hidden: true },
@@ -28,13 +31,12 @@ export const site = {
   footer: {
     wordmarkLabel: "Doodler",
     navLabel: "Footer",
+    // hallo@doodler.app and LinkedIn are taken out of the footer for now
     links: [
-      { label: "hallo@doodler.app", href: "mailto:hallo@doodler.app" },
       { label: "Veiligheid", href: "/veiligheid" },
       { label: "Privacy", href: "#" }, // TODO(link): no privacy page yet
       { label: "Voorwaarden", href: "#" }, // TODO(link): no terms page yet
       { label: "Inloggen", href: "https://start.doodler.app" },
-      { label: "LinkedIn", href: "#" }, // TODO(link): company LinkedIn URL
     ],
     legal: "Doodler is een product van Het Verbond B.V., Amsterdam, KvK 92846963.",
   },

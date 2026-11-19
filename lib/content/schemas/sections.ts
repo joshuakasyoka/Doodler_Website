@@ -42,6 +42,8 @@ export const promptDrawDemo = z.object({
   printLabel: text,
   printBusyLabel: text,
   printReadyLabel: text,
+  /** The first doodle once it is redrawn with the edit (editText). */
+  editImage: image.optional(),
   chapters: z
     .array(
       z.object({
@@ -172,6 +174,10 @@ export const ctaPanel = section("cta-panel", {
 export const quoteBlock = section("quote", {
   text: markup,
   cite: text,
+  /** Set a long quote smaller than the default pull quote. */
+  small: z.boolean().optional(),
+  /** Drawn line above the quote, leading into it. */
+  thread: thread.optional(),
 });
 
 export const faq = section("faq", {
@@ -230,6 +236,8 @@ export const facts = section("facts", {
 
 export const templateCarousel = section("template-carousel", {
   heading: markup,
+  /** A line under the heading. */
+  lead: markup.optional(),
   cards: z
     .array(
       z.object({
@@ -241,7 +249,7 @@ export const templateCarousel = section("template-carousel", {
       }),
     )
     .min(1),
-  footLink: link.extend({ hidden: z.boolean().optional() }).optional(),
+  cta: button.optional(),
 });
 
 export const integrations = section("integrations", {
@@ -255,6 +263,7 @@ export const callout = section("callout", {
   icon: iconName,
   heading: markup,
   text: markup,
+  badges: z.array(z.object({ icon: iconName, label: text })).optional(),
   link,
 });
 

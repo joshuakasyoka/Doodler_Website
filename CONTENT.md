@@ -46,8 +46,7 @@ off the site while keeping it in the file. Several old sections are kept this wa
 `hidden: true`.
 
 **Placeholders still to fill in.** Search the content folder for `TODO`. Links set to `"#"`
-(Privacy, Voorwaarden, LinkedIn, demo booking, pilot report download) and the Matthijs Jantzen
-quote are waiting for real values.
+(Privacy, Voorwaarden, LinkedIn) are waiting for real values.
 
 ## Add or replace an image
 

@@ -12,8 +12,13 @@ export const home = {
     {
       type: "hero",
       heading: "Herstel *in beeld*",
-      lead: "Maak in 30 seconden een doodle: een praatplaat van wat jij en je cliënt bespreken. Geef het mee naar huis en help je cliënt de regie te nemen.",
-      cta: { label: "Plan een demo", href: "/product#demo", icon: "calendar", variant: "primary" },
+      lead: "Maak in 30 seconden een doodle voor wat jij en je cliënt bespreken. Geef deze visuele praatplaat mee naar huis en help je cliënt de regie te nemen.",
+      cta: {
+        label: "Plan een demo",
+        href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
+        icon: "calendar",
+        variant: "primary",
+      },
       demo: {
         label:
           "Een verslag wordt op Doodler gesleept, Doodler tekent per onderdeel vier doodles, je stapt door de onderdelen en print het resultaat",
@@ -30,6 +35,7 @@ export const home = {
         printLabel: "Printen",
         printBusyLabel: "PDF voorbereiden…",
         printReadyLabel: "Klaar om te printen",
+        editImage: deco(templateImages.krachtenBoek),
         chapters: [
           {
             title: "Krachten",
@@ -164,12 +170,12 @@ export const home = {
     {
       type: "template-list",
       id: "toepassingen",
-      heading: "Een eigen template *voor elk type gesprek*",
+      heading: "Een passend template *voor elk type gesprek*",
       items: [
         { label: "Intakegesprek" },
         { label: "Adviesgesprek" },
         { label: "Psychodiagnostiek" },
-        { label: "Vrij tekenen" },
+        { label: "Live tekenen" },
         { label: "Behandelgesprek", soon: true },
         { label: "Medicatiegesprek", soon: true },
         { label: "Signaleringsplan" },
@@ -273,7 +279,11 @@ export const home = {
         { value: "85%", label: "van de behandelaren ervaarden meer betrokkenheid bij cliënten." },
         { value: "74%", label: "van de behandelaren verwachtte sneller behandeldoelen te behalen." },
       ],
-      cta: { label: "Download het pilotrapport", href: "/onderzoek#download", icon: "download" },
+      cta: {
+        label: "Download het pilotrapport",
+        href: "https://form.typeform.com/to/Nd4W1Pwj",
+        icon: "download",
+      },
     },
     {
       type: "testimonials",
@@ -318,14 +328,18 @@ export const home = {
     {
       type: "photo-feature",
       id: "praktijk",
-      heading: "Reist mee tot *de koelkastdeur*",
+      heading: "Een doodle reist mee *tot aan de keukentafel*",
       image: {
         src: "/images/home/doodle-op-koelkast.webp",
         alt: "Een uitgeprinte doodle over de aanpak hangt met een magneet op de koelkast",
         width: 1280,
         height: 703,
       },
-      link: { label: "Boek een demo", href: "/product#demo", icon: "arrow-link" },
+      link: {
+        label: "Plan een demo",
+        href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
+        icon: "arrow-link",
+      },
     },
     {
       type: "showcase",
@@ -346,7 +360,12 @@ export const home = {
       hidden: true,
       icon: "people-doodle",
       heading: "Zullen we het *samen uittekenen?*",
-      button: { label: "Boek een demo", href: "/product#demo", icon: "calendar-check", variant: "light" },
+      button: {
+        label: "Boek een demo",
+        href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
+        icon: "calendar-check",
+        variant: "light",
+      },
     },
     {
       type: "back-to-top",

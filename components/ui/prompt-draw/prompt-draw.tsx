@@ -268,7 +268,10 @@ function Framework({ t, T, demo, images }: Frame) {
               selected={selected && i === 0}
               redrawing={redrawing && i === 0}
               redrawingLabel={demo.redrawingLabel}
-              img={images.get(c.image.src)}
+              img={images.get(
+                // once redrawn, the edited doodle shows what was asked for
+                step === 0 && i === 0 && demo.editImage && t >= e.drawn ? demo.editImage.src : c.image.src,
+              )}
             />
           ))}
         </div>
@@ -404,19 +407,20 @@ export function PromptDraw({ demo }: Props) {
 
   const images = useMemo(() => {
     const map = new Map<string, ImgProps>();
-    for (const chapter of demo.chapters)
-      for (const card of chapter.cards)
-        map.set(
-          card.image.src,
-          getImageProps({
-            src: card.image.src,
-            width: card.image.width,
-            height: card.image.height,
-            alt: "",
-            sizes: "(min-width: 1024px) 220px, 30vw",
-            quality: 75,
-          }).props,
-        );
+    const all = demo.chapters.flatMap((chapter) => chapter.cards.map((card) => card.image));
+    if (demo.editImage) all.push(demo.editImage);
+    for (const image of all)
+      map.set(
+        image.src,
+        getImageProps({
+          src: image.src,
+          width: image.width,
+          height: image.height,
+          alt: "",
+          sizes: "(min-width: 1024px) 220px, 30vw",
+          quality: 75,
+        }).props,
+      );
     return map;
   }, [demo]);
 

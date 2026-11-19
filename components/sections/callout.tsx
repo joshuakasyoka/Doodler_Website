@@ -1,4 +1,16 @@
-import { Card, Container, Heading, Icon, Link, Reveal, Section, Stack, Text } from "@/components/ui";
+import {
+  Card,
+  Cluster,
+  Container,
+  Heading,
+  Icon,
+  Link,
+  Reveal,
+  Section,
+  Stack,
+  Tag,
+  Text,
+} from "@/components/ui";
 import { headingLevel, type SectionProps } from "./types";
 
 export function CalloutSection({ section, context }: SectionProps<"callout">) {
@@ -12,6 +24,15 @@ export function CalloutSection({ section, context }: SectionProps<"callout">) {
               <Stack gap="xs" align="center">
                 <Heading level={headingLevel(context)} size="subhead" align="center" text={section.heading} />
                 <Text tone="muted" align="center" text={section.text} />
+                {section.badges && (
+                  <Cluster as="ul" gap="xs" justify="center">
+                    {section.badges.map((badge) => (
+                      <li key={badge.label}>
+                        <Tag icon={badge.icon} label={badge.label} variant="chip" />
+                      </li>
+                    ))}
+                  </Cluster>
+                )}
                 <Link href={section.link.href} icon={section.link.icon}>
                   {section.link.label}
                 </Link>

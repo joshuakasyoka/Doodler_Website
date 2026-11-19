@@ -7,7 +7,7 @@ const text = cva("", {
     size: {
       lead: "max-w-measure font-body text-lead text-balance",
       /** the home hero's wider intro */
-      "lead-wide": "max-w-lead font-body text-lead text-balance",
+      "lead-wide": "max-w-lead font-body text-lead text-pretty",
       label: "font-display text-label",
       /** a short intro set in the UI font (the template panel) */
       intro: "font-body text-subhead",

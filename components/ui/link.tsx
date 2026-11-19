@@ -78,7 +78,13 @@ export function Link({ href, children, icon, label, current, variant, iconEnd }:
     );
   const external = href.startsWith("https://");
   return (
-    <a href={href} className={className} aria-label={label} rel={external ? "noopener" : undefined}>
+    <a
+      href={href}
+      className={className}
+      aria-label={label}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+    >
       {content}
     </a>
   );

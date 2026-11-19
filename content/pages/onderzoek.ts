@@ -38,20 +38,24 @@ export const onderzoek = {
       ],
     },
     {
-      type: "cta-panel",
-      id: "download",
-      thread: "thread",
-      icon: "paper-download",
-      heading: "Download het *pilotrapport*",
-      // TODO(link): point this at the pilot report PDF before going live
-      button: { label: "Download het pilotrapport", href: "#", icon: "download-pill", variant: "light" },
-      source: "Bron: pilotrapport GGz Centraal en Karakter",
-    },
-    {
       type: "quote",
       id: "quote",
+      thread: "thread",
       text: "Met dit soort plaatjes kan het gesprek sneller to the point komen.",
       cite: "Cliënt, deeltijdgroep Fornhese",
+    },
+    {
+      type: "cta-panel",
+      id: "download",
+      icon: "paper-download",
+      heading: "Download het *pilotrapport*",
+      button: {
+        label: "Download het pilotrapport",
+        href: "https://form.typeform.com/to/Nd4W1Pwj",
+        icon: "download-pill",
+        variant: "light",
+      },
+      source: "Bron: pilotrapport GGz Centraal en Karakter",
     },
   ],
 } satisfies PageInput;

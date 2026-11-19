@@ -457,6 +457,26 @@
   }
 }
 
+/* bigger marks in the display face, round a quote set in the body face */
+@utility quoted-lg {
+  &::before,
+  &::after {
+    font-family: var(--font-display);
+    font-size: 2.4em;
+    font-weight: 500;
+    line-height: 0;
+    vertical-align: -0.38em;
+  }
+  &::before {
+    content: "\201C";
+    margin-right: 0.12em;
+  }
+  &::after {
+    content: "\201D";
+    margin-left: 0.12em;
+  }
+}
+
 /* a hand-drawn tick before a list item (price features) */
 @utility tick {
   position: relative;

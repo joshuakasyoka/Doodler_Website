@@ -20,6 +20,9 @@ const section = cva("relative", {
       /** the near-full-width panels: a 16px gap above and below */
       inset: "py-inset",
       bottom: "pb-section",
+      /** a drawn line leads in from the section above: the cards above hang 24px into this one, and
+          the quote under the line sits 24px below it, so 48px here evens the space either side of the line */
+      "thread-in": "pt-thread-in pb-section",
       steps: "pt-4xl",
       trial: "pt-page-top-sm pb-2xl",
       carousel: "py-4xl",

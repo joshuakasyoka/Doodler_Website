@@ -19,8 +19,8 @@ export const en: Readonly<Record<string, string>> = {
   "Doodler is een product van Het Verbond B.V., Amsterdam, KvK 92846963.":
     "Doodler is a product of Het Verbond B.V., Amsterdam, CoC 92846963.",
   "Herstel *in beeld*": "Recovery *in view*",
-  "Maak in 30 seconden een doodle: een praatplaat van wat jij en je cliënt bespreken. Geef het mee naar huis en help je cliënt de regie te nemen.":
-    "Make a doodle in 30 seconds: a visual of what you and your client discuss. Send it home with them and help your client take control.",
+  "Maak in 30 seconden een doodle voor wat jij en je cliënt bespreken. Geef deze visuele praatplaat mee naar huis en help je cliënt de regie te nemen.":
+    "Make a doodle in 30 seconds of what you and your client discuss. Send this visual aid home with them and help your client take control.",
   "Plan een demo": "Schedule a demo",
   "Al in de behandelkamer bij": "Already in the treatment room at",
   "Lees hun verhalen": "Read their stories",
@@ -46,11 +46,15 @@ export const en: Readonly<Record<string, string>> = {
   "Na het gesprek": "After the conversation",
   "Maak van de transcriptie een doodle die je direct aan je cliënt mee naar huis geeft.":
     "Turn the transcript into a doodle that you give your client to take home straight away.",
-  "Een eigen template *voor elk type gesprek*": "A template of its own for *every type of conversation*",
+  "Waar gaat het gesprek *vandaag over?*": "What is the conversation *about today?*",
+  "Voor elk type gesprek een template dat precies past bij de inhoud van het gesprek.":
+    "For every type of conversation, a template that fits exactly what the conversation is about.",
+  "Een passend template *voor elk type gesprek*": "A matching template for *every type of conversation*",
   Intakegesprek: "Intake interview",
   Adviesgesprek: "Consultation",
   Psychodiagnostiek: "Psychodiagnostics",
   "Vrij tekenen": "Free drawing",
+  "Live tekenen": "Live drawing",
   Behandelgesprek: "Treatment conversation",
   Medicatiegesprek: "Medication conversation",
   Signaleringsplan: "Relapse prevention plan",
@@ -86,6 +90,8 @@ export const en: Readonly<Record<string, string>> = {
     "“Incredible that you get a printout like that so quickly. Your own drawing skills cannot compete with that.”",
   Behandelaar: "Practitioner",
   "Reist mee tot *de koelkastdeur*": "Travels with the client *to the fridge door*",
+  "Een doodle reist mee *tot aan de keukentafel*":
+    "A doodle travels with them *all the way to the kitchen table*",
   "Boek een demo": "Book a demo",
   "Onze missie is om elke cliënt aan het roer te laten staan van hun eigen herstel.":
     "Our mission is to put every client at the helm of their own recovery.",
@@ -130,8 +136,8 @@ export const en: Readonly<Record<string, string>> = {
   "Werkte acht jaar aan AI die teams helpt samen te werken.":
     "Worked for eight years on AI that helps teams work together.",
   "Wil je *meetekenen?*": "Want to *draw along?*",
-  "Geen vacature die past? Schrijf ons toch: hallo@doodler.app":
-    "No vacancy that fits? Write to us anyway: hallo@doodler.app",
+  "Geen vacature die past? Schrijf ons toch: mayra@doodler.app":
+    "No vacancy that fits? Write to us anyway: mayra@doodler.app",
   "Stuur ons een e-mail": "Email us",
   "Betaal alleen voor *wie ermee werkt*": "Only pay for *who uses it*",
   "Begin met een kleine groep en breid uit wanneer je wilt.":
@@ -144,14 +150,15 @@ export const en: Readonly<Record<string, string>> = {
   "Upload een verslag, transcriptie of typ steekwoorden en binnen 30 seconden ligt er een doodle klaar die je zelf eenvoudig aanpast.":
     "Upload a report or transcript, or type keywords, and within 30 seconds a doodle is ready that you easily adjust yourself.",
   "Vliegensvlug klaar": "Ready in a flash",
-  "Een doodle staat in 30 seconden klaar. Een losse tekening in een paar seconden.":
-    "A doodle is ready in 30 seconds. A single drawing in a few seconds.",
+  "Een doodle in 30 seconden, een losse tekening in enkele seconden.":
+    "A doodle in 30 seconds, a single drawing in a few seconds.",
   "Geen training nodig": "No training needed",
   "Een doodle maak je eenvoudig en intuïtief.": "You make a doodle simply and intuitively.",
   "Doelen mee naar huis": "Goals to take home",
-  "Geef de doodle na het gesprek mee aan de cliënt.": "Give the client the doodle after the conversation.",
+  "Print of deel de doodle na het gesprek.": "Print or share the doodle after the conversation.",
   "In elke taal": "In every language",
-  "Vertaal de doodle naar de taal van je cliënt.": "Translate the doodle into your client's language.",
+  "Laat de doodle automatisch vertalen naar de taal van je cliënt.":
+    "Have the doodle translated automatically into your client's language.",
   "Dit wil ik gebruiken om op school te vertellen hoe mijn hoofd werkt.":
     "I want to use this at school to explain how my head works.",
   "Jongere, pilot jeugd-ggz": "Young person, youth mental health pilot",
@@ -174,9 +181,12 @@ export const en: Readonly<Record<string, string>> = {
   "verwacht november 2026": "expected November 2026",
   "verwacht december 2026": "expected December 2026",
   "verwacht 2027": "expected 2027",
-  "Veiligheid altijd in beeld": "Safety always in view",
+  "Veiligheid voorop": "Safety first",
+  "Veiligheid *voorop*": "Safety *first*",
+  "AI-visualisatie kan veel waarde toevoegen, maar moet veilig geborgd worden. Daarom werken we vanaf de start met pseudonimisering en nulretentie, en zijn we AVG-proof.":
+    "AI visualisation can add a lot of value, but it has to be safeguarded. That's why we use pseudonymisation and zero retention from the start, and are GDPR-compliant.",
   "Wij anonimiseren alle gegevens automatisch voordat ze in AI worden ingevoerd. Data blijven in Europese datacenters en we gebruiken ze nooit om AI-modellen te trainen.":
-    "We automatically anonymise all data before it goes into AI. Data stays in European data centres and we never use it to train AI models.",
+    "We anonymise all data automatically before it goes into AI. Data stays in European data centres and we never use it to train AI models.",
   "Zo gaan we om met jouw gegevens": "How we handle your data",
   "Veelgestelde vragen": "Frequently asked questions",
   "Wat is een doodle?": "What is a doodle?",
@@ -192,19 +202,16 @@ export const en: Readonly<Record<string, string>> = {
   "Doodler is beschikbaar vanaf €2 per gesprek, of €15 per behandelaar per maand. [Prijzen](/prijzen)":
     "Doodler is available from €2 per conversation, or €15 per practitioner per month. [Pricing](/prijzen)",
   "Werkt Doodler ook buiten de ggz?": "Does Doodler work outside mental healthcare?",
-  "Doodler is initieel gemaakt voor de ggz. Met het Institute for Positive Health verkennen we de somatische zorg; mail [mayra@doodler.app](mailto:mayra@doodler.app).":
-    "Doodler was first made for mental healthcare. With the Institute for Positive Health we are exploring physical care; email [mayra@doodler.app](mailto:mayra@doodler.app).",
+  "Doodler is initieel gemaakt voor de ggz. Met onder andere het Institute for Positive Health verkennen we de somatische zorg. Wil jij samenwerken? Mail [mayra@doodler.app](mailto:mayra@doodler.app).":
+    "Doodler was first made for mental healthcare. Together with the Institute for Positive Health, among others, we are exploring physical care. Want to work with us? Email [mayra@doodler.app](mailto:mayra@doodler.app).",
   "Een doodle uit een gesprek aan de keukentafel": "A doodle from a conversation at the kitchen table",
   "Rondleiding door Doodler: van gesprekstekst naar doodle":
     "Tour of Doodler: from conversation text to doodle",
-  "Veiligheid *scherp in beeld*": "Safety *in sharp focus*",
-  "In een zorggesprek deelt je cliënt het meest persoonlijke dat er is. Daarom verwerkt Doodler zo min mogelijk gegevens, alleen in Europa. Je invoer wordt direct verwijderd en nooit gebruikt om AI te trainen.":
-    "In a care conversation, your client shares the most personal things there are. That's why Doodler processes as little data as possible, only in Europe. What you put in is deleted straight away and never used to train AI.",
   AVG: "GDPR",
   "Wat gebeurt er *met jouw tekst?*": "What happens *to your text?*",
   "Je voert tekst in": "You enter text",
   "Een verslag, transcriptie of je eigen steekwoorden.": "A report, a transcript or your own keywords.",
-  "Persoonsgegevens gaan eruit": "Personal details come out",
+  Pseudonimisering: "Pseudonymisation",
   "Namen en andere herleidbare gegevens worden automatisch gepseudonimiseerd.":
     "Names and other identifying details are pseudonymised automatically.",
   "AI maakt een verhaallijn": "AI makes a storyline",
@@ -218,19 +225,23 @@ export const en: Readonly<Record<string, string>> = {
     "Without identifying client details, and stored in your organisation's secure environment.",
   "Vragen over *je gegevens*": "Questions about *your data*",
   "Zijn jullie gecertificeerd?": "Are you certified?",
-  "Ja. Doodler is ISO 27001 en NEN 7510 gecertificeerd.": "Yes. Doodler is ISO 27001 and NEN 7510 certified.",
+  "Ja. Wij zijn ISO 27001 en NEN 7510 gecertificeerd.": "Yes. We are ISO 27001 and NEN 7510 certified.",
+  "Nee. Je gegevens worden nooit gebruikt om AI te trainen. Niet door ons, en niet door Microsoft.":
+    "No. Your data is never used to train AI. Not by us, and not by Microsoft.",
+  "Hoe lang bewaren jullie een doodle?": "How long do you keep a doodle?",
+  "Welke documentatie is beschikbaar?": "What documentation is available?",
+  "Onze standaard verwerkersovereenkomst, DPIA, informatiebeleid, ISO 27001 en NEN 7510 certificaten (vanaf eind november 2026) en verklaring van toepasselijkheid. Mail om deze op te vragen: [jaap@doodler.app](mailto:jaap@doodler.app)":
+    "Our standard data processing agreement, DPIA, information security policy, ISO 27001 and NEN 7510 certificates (from the end of November 2026) and statement of applicability. Email to request them: [jaap@doodler.app](mailto:jaap@doodler.app)",
   "Waar staan de gegevens?": "Where is the data stored?",
   "In Europese datacenters, onder Europese wetgeving.": "In European data centres, under European law.",
   "Traint het AI-model op onze data?": "Does the AI model train on our data?",
-  "Nee. Je brontekst wordt niet bewaard en niet gebruikt om modellen te trainen.":
-    "No. Your source text is not kept and not used to train models.",
-  "Hoe lang bewaren jullie een praatplaat?": "How long do you keep a visual aid?",
   "Zolang jouw organisatie dat wil. Verwijderen kan altijd.":
     "As long as your organisation wants. You can always delete it.",
-  "Is er een verwerkersovereenkomst en DPIA?": "Is there a data processing agreement and a DPIA?",
-  "Ja, op verzoek, net als onze verklaring van toepasselijkheid en certificaten.":
-    "Yes, on request, as are our statement of applicability and certificates.",
   "Vraag DPIA documenten op": "Request the DPIA documents",
   "Een beveiligingsprobleem gezien? Mail [support@doodler.app](mailto:support@doodler.app).":
     "Seen a security issue? Email [support@doodler.app](mailto:support@doodler.app).",
+  "De samenwerking met Doodler ervaart GGz Centraal als open, zorgvuldig en constructief. Binnen de organisatie is het team: Privacy en Informatiebeveiliging binnen GGz Centraal vanaf het begin bij het ontwikkelproces van Doodler betrokken. Wanneer er vragen en aandachtspunten zijn wordt dit altijd op een fijne manier besproken en zien wij dat Doodler hier met daadkracht op reageert. Wat wij erg waarderen aan Doodler is dat er ten alle tijden transparantie is over de gemaakte keuzes. Voor GGz Centraal is deze open samenwerking essentieel bij het verantwoord innoveren met AI binnen de geestelijke gezondheidszorg.":
+    "GGz Centraal experiences its collaboration with Doodler as open, careful and constructive. Within the organisation, the Privacy and Information Security team at GGz Centraal has been involved in Doodler's development from the start. Whenever there are questions or points of attention, they are always discussed in a pleasant way, and we see Doodler respond decisively. What we really value about Doodler is that there is always transparency about the choices made. For GGz Centraal, this open collaboration is essential to innovating responsibly with AI in mental healthcare.",
+  "Anne-Aimée Wollerich, ISO & Privacy Officer GGz Centraal":
+    "Anne-Aimée Wollerich, ISO & Privacy Officer, GGz Centraal",
 };
