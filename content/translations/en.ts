@@ -112,10 +112,8 @@ export const en: Readonly<Record<string, string>> = {
   "Een uitgeprinte doodle over de aanpak hangt met een magneet op de koelkast":
     "A printed doodle about the treatment approach hangs on the fridge with a magnet",
   "Gebaseerd op wetenschap, *getest in de praktijk*": "Grounded in science, *tested in practice*",
-  "Doodler is geïnspireerd op de zelfdeterminatietheorie en motiverende gespreksvoering, en ontwikkeld met behandelaren en cliënten.":
-    "Doodler is inspired by self-determination theory and motivational interviewing, and developed with practitioners and clients.",
-  "Drie maanden lang gebruikten 46 behandelaren van GGz Centraal en Karakter Doodler in adviesgesprekken in de jeugd-ggz.":
-    "For three months, 46 practitioners at GGz Centraal and Karakter used Doodler in consultations in youth mental healthcare.",
+  "Doodler is geïnspireerd op de zelfdeterminatietheorie en motiverende gespreksvoering, en ontwikkeld met behandelaren en cliënten. Drie maanden lang gebruikten 46 behandelaren van GGz Centraal en Karakter Doodler in adviesgesprekken in de jeugd-ggz.":
+    "Doodler is inspired by self-determination theory and motivational interviewing, and developed with practitioners and clients. For three months, 46 practitioners at GGz Centraal and Karakter used Doodler in consultations in youth mental healthcare.",
   "van de behandelaren zag *meer begrip* bij de cliënt":
     "of practitioners saw *more understanding* in the client",
   "zag *meer betrokkenheid*": "saw *more engagement*",
@@ -127,8 +125,8 @@ export const en: Readonly<Record<string, string>> = {
   "Cliënt, deeltijdgroep Fornhese": "Client, part-time group Fornhese",
   "Vier mensen bespreken uitgeprinte praatplaten aan een tafel":
     "Four people discuss printed visual aids around a table",
-  "Een visuele lijn *in de zorg*": "A visual line *in care*",
-  "Door Mayra Kapteijn, oprichter": "By Mayra Kapteijn, founder",
+  "Iedereen regie over hun *eigen gezondheid*": "Everyone in charge of *their own health*",
+  "Mayra Kapteijn, oprichter Doodler": "Mayra Kapteijn, founder of Doodler",
   "Wie *Doodler* maakt": "Who makes *Doodler*",
   "Wie met ons *meedenkt*": "Who thinks *along with us*",
   "Leidde vijftien jaar een EPD-leverancier en weet hoe nieuwe zorgtechnologie aansluit op bestaande systemen.":

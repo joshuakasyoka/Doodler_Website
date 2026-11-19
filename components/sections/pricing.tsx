@@ -53,11 +53,13 @@ export function PricingSection({ section, context }: SectionProps<"pricing">) {
             </Reveal>
           ))}
         </Grid>
-        <div className="mt-xl text-center font-body text-fine text-text-muted">
-          <Link href={section.terms.href} variant="inline">
-            {section.terms.label}
-          </Link>
-        </div>
+        {!section.terms.hidden && (
+          <div className="mt-xl text-center font-body text-fine text-text-muted">
+            <Link href={section.terms.href} variant="inline">
+              {section.terms.label}
+            </Link>
+          </div>
+        )}
       </Container>
     </Section>
   );

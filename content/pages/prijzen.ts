@@ -56,8 +56,8 @@ export const prijzen = {
           cta: plan,
         },
       ],
-      // TODO(link): no terms page yet
-      terms: { label: "Lees onze Algemene Voorwaarden", href: "#" },
+      // TODO(link): no terms page yet; hidden until there is one
+      terms: { label: "Lees onze Algemene Voorwaarden", href: "#", hidden: true },
     },
     {
       type: "cta-panel",

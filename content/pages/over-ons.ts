@@ -21,16 +21,15 @@ export const overOns = {
       id: "manifest",
       sign: "manifest",
       eyebrow: "Manifest",
-      heading: "Een visuele lijn *in de zorg*",
-      byline: "Door Mayra Kapteijn, oprichter",
-      lead: "Doodler is ontstaan vanuit de visie om de zorg meer te organiseren rondom cliënten, in plaats van dat cliënten hun weg in de zorg moeten vinden.",
+      heading: "Iedereen regie over hun *eigen gezondheid*",
+      byline: "Mayra Kapteijn, oprichter Doodler",
       thread: "thread-long",
     },
     {
+      // the opening paragraph, under the line that leads down from the title
       type: "statement",
-      id: "vraag",
-      lead: "Na 10 jaar ontwerpend onderzoek in de wereld van zorg en welzijn kreeg ik een heel simpel idee:",
-      text: "wat gebeurt er wanneer cliënt en behandelaar elkaar *beter gaan verstaan?*",
+      id: "inleiding",
+      lead: "In een wereld waarin AI nieuwe manieren van werken mogelijk maakt, moeten we goed nadenken over het werk dat mensen, en het werk dat robots zouden moeten doen. Als social designer heb ik in misschien wel honderd interviews door de jaren heen geleerd wat belangrijk is: regie en relatie. Dáár zit het grootste potentieel tot herstel, laat veel onderzoek zien. Maar er is weinig technologie die die dingen nu gemakkelijker maakt, en dus cliënten helpt de regie te voeren in dat contact met de zorg.",
     },
     {
       type: "manifest-path",
@@ -38,41 +37,34 @@ export const overOns = {
         {
           thread: "thread-long-alt",
           image: manifestPhoto("manifest-gesprek-aan-tafel"),
-          statement: "In een wereld waarin AI nieuwe manieren van werken mogelijk maakt,",
-          sub: "vind ik dat we heel goed en diep moeten nadenken over het werk dat mensen, en het werk dat robots zouden moeten doen.",
+          statement: "“Het zorgpotentieel wordt enorm vergroot wanneer cliënt de regie kan voeren”",
+          follow:
+            "Na 10 jaar ontwerpend onderzoek in de wereld van zorg en welzijn kreeg ik een heel simpel idee: wat gebeurt er wanneer cliënt, behandelaar en het netwerk als één team gaan samenwerken?",
         },
         {
           thread: "thread-loop",
-          image: manifestPhoto("manifest-gang"),
-          statement:
-            "Wat ik in mijn 10 jaar als social designer heb geleerd is dat behandelaren én cliënten vooral het contact heel erg belangrijk vinden.",
-          follow: "Dáár zit het grootste potentieel tot herstel, laat veel onderzoek zien.",
-        },
-        {
-          thread: "thread-alt",
           image: manifestPhoto("manifest-werkplek-printer"),
           statement:
-            "Dat contact ontstaat op dit moment vooral *ondanks* de technologie, in plaats van *dankzij* technologie.",
+            "Mijn visie is om technologie te ontwikkelen die menselijk contact niet vervangt, maar vooral gemakkelijker maakt.",
           follow:
-            "Mijn visie is om technologie te ontwikkelen die menselijk contact niet vervangt, maar vooral ondersteunt.",
+            "Om zo met harde technologie, zachtere zorg mogelijk te maken. Want in dat zachte, het contact, het begrip, dáár zit het potentieel om mensen te motiveren, aan gezondheidsvaardigheden te werken, en onderliggende factoren aan te pakken.",
         },
         {
           thread: "thread-alt",
-          image: manifestPhoto("manifest-praatplaten-op-tafel"),
+          image: manifestPhoto("manifest-gang"),
           statement:
-            "Ik wil de mensen in de zorg superkrachten geven, om zo met harde technologie *zachtere zorg* mogelijk te maken.",
+            "“Met Doodler willen we cliënten, hun netwerk, en behandelaren supercommunicators maken.”",
           follow:
-            "Want in dat zachte, het contact, het begrip, dáár zit het potentieel om mensen te motiveren, aan gezondheidsvaardigheden te werken, en onderliggende factoren aan te pakken.",
+            "Doodler blijft zich doorontwikkelen als platform voor meer regie en betere samenwerking in de zorg. Vandaag de dag werken we met meer dan 50 behandelaren in de zorg. Volgend jaar zijn dat er hopelijk meer dan duizend. We gaan het voor iedereen mogelijk maken om hun gezondheid te begrijpen, en het eigen te maken.",
         },
       ],
     },
     {
       type: "statement",
       variant: "statement",
-      thread: "thread-loop",
-      text: "Ik denk dat zorg niet een “product” is op een markt, die altijd hetzelfde is, onafhankelijk van de ontvanger. Ik zie zorg als een interactie tussen twee personen.",
-      follow:
-        "En het zorgpotentieel wordt enorm vergroot wanneer die twee personen in die relatie tot hun recht komen.",
+      thread: "thread-alt",
+      image: manifestPhoto("manifest-praatplaten-op-tafel"),
+      text: "“Ik denk dat zorg niet een ‘product’ is op een markt, die altijd hetzelfde is, onafhankelijk van de ontvanger. Ik zie zorg als een interactie tussen meerdere personen.”",
     },
     { type: "thread", thread: "thread" },
     {

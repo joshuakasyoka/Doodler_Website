@@ -1,4 +1,5 @@
-import { Container, Image, Reveal, Section, Text, Thread } from "@/components/ui";
+import { Container, Image, Reveal, Section, Thread } from "@/components/ui";
+import { ManifestBlock } from "./manifest-block";
 import type { SectionProps } from "./types";
 
 export function ManifestPathSection({ section, context }: SectionProps<"manifest-path">) {
@@ -11,25 +12,9 @@ export function ManifestPathSection({ section, context }: SectionProps<"manifest
             <Reveal>
               <Image image={step.image} layout="polaroid" sizes="330px" photosHidden={context.photosHidden} />
             </Reveal>
-            <div className="mt-4xl">
-              <Reveal>
-                <Text size="manifest" align="center" text={step.statement} />
-              </Reveal>
+            <div className="mt-4xl w-full">
+              <ManifestBlock statement={step.statement} body={[step.sub, step.follow]} />
             </div>
-            {step.sub && (
-              <div className="mt-xl">
-                <Reveal>
-                  <Text size="manifest-follow" tone="muted" align="center" text={step.sub} />
-                </Reveal>
-              </div>
-            )}
-            {step.follow && (
-              <div className="mt-lg">
-                <Reveal>
-                  <Text size="manifest-follow" tone="muted" align="center" text={step.follow} />
-                </Reveal>
-              </div>
-            )}
           </div>
         ))}
       </Container>

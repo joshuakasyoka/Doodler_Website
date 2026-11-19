@@ -209,7 +209,8 @@ export const statement = section("statement", {
    * statement with an optional follow-up.
    */
   variant: z.enum(["big", "title", "summary", "statement"]).default("big"),
-  text: markup,
+  /** Optional: a photo on its own (the research page) needs no line under it. */
+  text: markup.optional(),
   follow: markup.optional(),
 });
 
@@ -330,7 +331,7 @@ export const pricing = section("pricing", {
       }),
     )
     .min(1),
-  terms: link,
+  terms: link.extend({ hidden: z.boolean().optional() }),
 });
 
 /* ---------- Gratis proberen ---------- */

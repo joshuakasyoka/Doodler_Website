@@ -13,6 +13,7 @@ export const onderzoek = {
       sign: "research",
       eyebrow: "Onderzoek",
       heading: "Gebaseerd op wetenschap, *getest in de praktijk*",
+      lead: "Doodler is geïnspireerd op de zelfdeterminatietheorie en motiverende gespreksvoering, en ontwikkeld met behandelaren en cliënten. Drie maanden lang gebruikten 46 behandelaren van GGz Centraal en Karakter Doodler in adviesgesprekken in de jeugd-ggz.",
       thread: "thread-mid",
     },
     {
@@ -24,8 +25,6 @@ export const onderzoek = {
         width: 1280,
         height: 960,
       },
-      lead: "Doodler is geïnspireerd op de zelfdeterminatietheorie en motiverende gespreksvoering, en ontwikkeld met behandelaren en cliënten.",
-      text: "Drie maanden lang gebruikten 46 behandelaren van GGz Centraal en Karakter Doodler in adviesgesprekken in de jeugd-ggz.",
     },
     {
       type: "stats",
