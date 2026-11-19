@@ -9,12 +9,12 @@ type SignupFormProps = {
   label: string;
   placeholder: string;
   button: string;
-  /** The access form (a Typeform) the visitor goes on to. */
+  /** The form (a Typeform) the visitor goes on to: the pilot report download. */
   action: string;
 };
 
 /**
- * The banner's email pill: it opens the access form in a new tab with the address passed along as
+ * The banner's email pill: it opens the pilot report form in a new tab with the address passed along as
  * the Typeform hidden field `email` (#email=…), so the visitor doesn't type it twice. Without
  * JavaScript the browser sends it as ?email=… instead.
  */

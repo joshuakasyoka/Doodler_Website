@@ -85,7 +85,7 @@ export const mediaBanner = section("media-banner", {
     label: text,
     placeholder: text,
     button: text,
-    /** The access form the address is passed on to (as the Typeform hidden field `email`). */
+    /** The form the address is passed on to (as the Typeform hidden field `email`): the pilot report download. */
     action: href,
   }),
 });
