@@ -60,7 +60,7 @@ export const veiligheid = {
     {
       type: "quote",
       id: "quote",
-      text: "De samenwerking met Doodler ervaart GGz Centraal als open, zorgvuldig en constructief. Binnen de organisatie is het team: Privacy en Informatiebeveiliging binnen GGz Centraal vanaf het begin bij het ontwikkelproces van Doodler betrokken. Wanneer er vragen en aandachtspunten zijn wordt dit altijd op een fijne manier besproken en zien wij dat Doodler hier met daadkracht op reageert. Wat wij erg waarderen aan Doodler is dat er ten alle tijden transparantie is over de gemaakte keuzes. Voor GGz Centraal is deze open samenwerking essentieel bij het verantwoord innoveren met AI binnen de geestelijke gezondheidszorg.",
+      text: "De samenwerking met Doodler ervaart GGz Centraal als open, zorgvuldig en constructief. Binnen de organisatie is het team: Privacy en Informatiebeveiliging binnen GGz Centraal vanaf het begin bij het ontwikkelproces van Doodler betrokken.\n\nWanneer er vragen en aandachtspunten zijn wordt dit altijd op een fijne manier besproken en zien wij dat Doodler hier met daadkracht op reageert. Wat wij erg waarderen aan Doodler is dat er ten alle tijden transparantie is over de gemaakte keuzes. Voor GGz Centraal is deze open samenwerking essentieel bij het verantwoord innoveren met AI binnen de geestelijke gezondheidszorg.",
       cite: "Anne-Aimée Wollerich, ISO & Privacy Officer GGz Centraal",
       small: true,
     },

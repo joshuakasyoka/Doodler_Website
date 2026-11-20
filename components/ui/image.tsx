@@ -11,6 +11,8 @@ const image = cva("", {
       fill: "",
       /** a small photo on a white mount with a soft shadow (the manifest pages) */
       polaroid: "aspect-polaroid w-polaroid max-w-full rounded-sm bg-surface shadow-photo",
+      /** the same, larger: a page's lead photo */
+      "polaroid-lg": "aspect-polaroid w-polaroid-lg max-w-full rounded-md bg-surface shadow-photo",
       /** partner logos, sized by height */
       "logo-sm": "h-partner-sm w-auto max-w-full md:h-partner-sm-lg",
       "logo-md": "h-partner-md w-auto max-w-full md:h-partner-md-lg",
@@ -35,6 +37,7 @@ const placeholderBox = cva("block bg-placeholder", {
     layout: {
       intrinsic: "w-full",
       polaroid: "",
+      "polaroid-lg": "",
       fill: "absolute inset-0",
       "logo-sm": "",
       "logo-md": "",
@@ -57,8 +60,8 @@ type ImageProps = Omit<VariantProps<typeof image>, "tone"> & {
   sizes: string;
   /** Only for the page's largest above-the-fold image (LCP). */
   priority?: boolean;
-  /** "portrait" re-encodes at a higher quality, so faces stay crisp. */
-  quality?: "default" | "portrait";
+  /** "portrait" re-encodes higher, so faces stay crisp; "backdrop" lower, for a photo under a scrim and text. */
+  quality?: "default" | "portrait" | "backdrop";
   /** Render in the text colour (logos). */
   ink?: boolean;
   /** Site-wide photosHidden setting, passed down from the page. */
@@ -66,7 +69,17 @@ type ImageProps = Omit<VariantProps<typeof image>, "tone"> & {
 };
 
 /** Every image on the site: next/image with reserved dimensions, AVIF/WebP and a blur placeholder. */
-export function Image({ image: img, sizes, priority, ink, photosHidden, layout, fit, radius, quality }: ImageProps) {
+export function Image({
+  image: img,
+  sizes,
+  priority,
+  ink,
+  photosHidden,
+  layout,
+  fit,
+  radius,
+  quality,
+}: ImageProps) {
   const placeholder = photosHidden && img.hideable;
   const tone = placeholder ? "placeholder" : ink ? "ink" : "default";
   const className = image({ layout, fit, radius, tone });
@@ -75,7 +88,7 @@ export function Image({ image: img, sizes, priority, ink, photosHidden, layout, 
     alt: img.decorative ? "" : img.alt,
     sizes,
     className,
-    quality: quality === "portrait" ? 90 : 75,
+    quality: quality === "portrait" ? 90 : quality === "backdrop" ? 60 : 75,
     preload: priority,
     loading: priority ? ("eager" as const) : ("lazy" as const),
     fetchPriority: priority ? ("high" as const) : undefined,

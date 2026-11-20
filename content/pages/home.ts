@@ -1,4 +1,5 @@
 import type { PageInput } from "@/lib/content/schemas/site";
+import { demoCta } from "../shared/demo-cta";
 import { templateImages } from "../shared/templates";
 
 const deco = (img: { src: string; width: number; height: number }) => ({ ...img, alt: "", decorative: true });
@@ -112,23 +113,11 @@ export const home = {
       id: "samen",
       heading: "Zij aan zij *met je cliënt*",
       lead: "Met een doodle hebben jij en je cliënt letterlijk hetzelfde beeld voor ogen. Zo werk je makkelijker samen aan één doel.",
-      video: {
-        src: "/videos/home/banner-behandelkamer.mp4",
-        poster: {
-          src: "/images/home/banner-behandelkamer.webp",
-          alt: "",
-          decorative: true,
-          width: 1920,
-          height: 1080,
-        },
+      image: {
+        src: "/images/home/banner-behandelkamer.webp",
+        alt: "Een behandelaar en een cliënt bespreken samen een uitgeprinte doodle aan tafel",
         width: 1920,
-        height: 1080,
-      },
-      signup: {
-        label: "Je e-mailadres",
-        placeholder: "Je e-mailadres",
-        button: "Aan de slag",
-        action: "https://form.typeform.com/to/Nd4W1Pwj",
+        height: 1436,
       },
     },
     {
@@ -354,19 +343,7 @@ export const home = {
       quote: "Onze missie is om elke cliënt aan het roer te laten staan van hun eigen herstel.",
       link: { label: "Bekijk ons manifest", href: "/over-ons#manifest" },
     },
-    {
-      type: "cta-panel",
-      id: "cta",
-      hidden: true,
-      icon: "people-doodle",
-      heading: "Zullen we het *samen uittekenen?*",
-      button: {
-        label: "Boek een demo",
-        href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
-        icon: "calendar-check",
-        variant: "light",
-      },
-    },
+    { ...demoCta, id: "cta", hidden: true },
     {
       type: "back-to-top",
       hidden: true,

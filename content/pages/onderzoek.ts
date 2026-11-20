@@ -19,6 +19,7 @@ export const onderzoek = {
     {
       type: "statement",
       variant: "summary",
+      imageSize: "large",
       image: {
         src: "/images/onderzoek/praatplaten-aan-tafel.webp",
         alt: "Vier mensen bespreken uitgeprinte praatplaten aan een tafel",

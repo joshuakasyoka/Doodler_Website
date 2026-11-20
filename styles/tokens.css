@@ -163,6 +163,7 @@
   --spacing-thread-tall: clamp(11.25rem, 26vw, 23.25rem);
   --spacing-thread-mid: clamp(11.25rem, 24vw, 21.5625rem);
   --spacing-polaroid: 20.4375rem; /* 327px manifest photos */
+  --spacing-polaroid-lg: 32.5rem; /* 520px: a lead photo, e.g. the research page */
   --spacing-thread-gap: 2.25rem; /* space round the drawn lines */
   --spacing-thread-in: 3rem; /* top of a section a line leads into, so the line has even space either side */
   --spacing-card-pad: 1.75rem; /* 28px price and finding cards */

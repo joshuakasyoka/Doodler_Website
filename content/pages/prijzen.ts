@@ -1,4 +1,5 @@
 import type { PageInput } from "@/lib/content/schemas/site";
+import { demoCta } from "../shared/demo-cta";
 
 const plan = {
   label: "Plan een gesprek",
@@ -17,8 +18,8 @@ export const prijzen = {
       type: "pricing",
       id: "prijzen",
       eyebrow: "Prijzen",
-      heading: "Betaal alleen voor *wie ermee werkt*",
-      lead: "Begin met een kleine groep en breid uit wanneer je wilt.",
+      heading: "Een passend pakket *voor elke organisatie*",
+      lead: "Test het uit met een kleine groep of neem contact op voor maatwerk implementatie",
       plans: [
         {
           icon: "price-pay-per-use",
@@ -59,18 +60,6 @@ export const prijzen = {
       // TODO(link): no terms page yet; hidden until there is one
       terms: { label: "Lees onze Algemene Voorwaarden", href: "#", hidden: true },
     },
-    {
-      type: "cta-panel",
-      id: "demo",
-      icon: "people-doodle",
-      heading: "Samen doodlen?",
-      lead: "In een demo van 20 minuten laten we zien hoe Doodler werkt",
-      button: {
-        label: "Plan een demo",
-        href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
-        icon: "calendar-check",
-        variant: "light",
-      },
-    },
+    demoCta,
   ],
 } satisfies PageInput;

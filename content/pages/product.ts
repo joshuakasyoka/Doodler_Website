@@ -1,4 +1,5 @@
 import type { PageInput } from "@/lib/content/schemas/site";
+import { demoCta } from "../shared/demo-cta";
 import { templateImages } from "../shared/templates";
 
 const tile = (img: { src: string; width: number; height: number }, caption: string) => ({
@@ -188,17 +189,6 @@ export const product = {
         },
       ],
     },
-    {
-      type: "cta-panel",
-      id: "demo",
-      icon: "people-doodle",
-      heading: "Samen doodlen?",
-      button: {
-        label: "Boek een demo",
-        href: "https://calendar.google.com/appointments/schedules/AcZssZ3lTYadtR0IyEfnAs3Oost8-qK9OhRkZN835YrY8t5sIv2aIQKr5GuA235Qi73tZpPJHtjfc4-_",
-        icon: "calendar-check",
-        variant: "light",
-      },
-    },
+    demoCta,
   ],
 } satisfies PageInput;

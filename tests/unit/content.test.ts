@@ -25,7 +25,7 @@ describe("content", () => {
   it("adds blur placeholders and keeps image sizes honest", async () => {
     const home = await getPage("/");
     const banner = home?.sections.find((s) => s.type === "media-banner");
-    expect(banner?.type === "media-banner" && banner.video.poster.blurDataURL).toMatch(
+    expect(banner?.type === "media-banner" && banner.image?.blurDataURL).toMatch(
       /^data:image\/webp;base64,/,
     );
   });

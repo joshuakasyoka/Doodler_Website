@@ -127,19 +127,19 @@ export const en: Readonly<Record<string, string>> = {
     "Four people discuss printed visual aids around a table",
   "Iedereen regie over hun *eigen gezondheid*": "Everyone in charge of *their own health*",
   "Mayra Kapteijn, oprichter Doodler": "Mayra Kapteijn, founder of Doodler",
-  "Wie *Doodler* maakt": "Who makes *Doodler*",
-  "Wie met ons *meedenkt*": "Who thinks *along with us*",
+  "Ons *team*": "Our *team*",
+  "Experts die *met ons meedenken*": "Experts who *think along with us*",
   "Leidde vijftien jaar een EPD-leverancier en weet hoe nieuwe zorgtechnologie aansluit op bestaande systemen.":
     "Led an EHR supplier for fifteen years and knows how new care technology connects to existing systems.",
   "Werkte acht jaar aan AI die teams helpt samen te werken.":
     "Worked for eight years on AI that helps teams work together.",
-  "Wil je *meetekenen?*": "Want to *draw along?*",
+  "Wil jij *meedoodlen?*": "Want to *doodle along?*",
   "Geen vacature die past? Schrijf ons toch: mayra@doodler.app":
     "No vacancy that fits? Write to us anyway: mayra@doodler.app",
   "Stuur ons een e-mail": "Email us",
-  "Betaal alleen voor *wie ermee werkt*": "Only pay for *who uses it*",
-  "Begin met een kleine groep en breid uit wanneer je wilt.":
-    "Start with a small group and expand whenever you like.",
+  "Een passend pakket *voor elke organisatie*": "A fitting plan *for every organisation*",
+  "Test het uit met een kleine groep of neem contact op voor maatwerk implementatie":
+    "Try it with a small group, or get in touch for a tailored implementation",
   "Lees onze Algemene Voorwaarden": "Read our terms and conditions",
   "Samen doodlen?": "Doodle together?",
   "In een demo van 20 minuten laten we zien hoe Doodler werkt":
@@ -238,8 +238,8 @@ export const en: Readonly<Record<string, string>> = {
   "Vraag DPIA documenten op": "Request the DPIA documents",
   "Een beveiligingsprobleem gezien? Mail [support@doodler.app](mailto:support@doodler.app).":
     "Seen a security issue? Email [support@doodler.app](mailto:support@doodler.app).",
-  "De samenwerking met Doodler ervaart GGz Centraal als open, zorgvuldig en constructief. Binnen de organisatie is het team: Privacy en Informatiebeveiliging binnen GGz Centraal vanaf het begin bij het ontwikkelproces van Doodler betrokken. Wanneer er vragen en aandachtspunten zijn wordt dit altijd op een fijne manier besproken en zien wij dat Doodler hier met daadkracht op reageert. Wat wij erg waarderen aan Doodler is dat er ten alle tijden transparantie is over de gemaakte keuzes. Voor GGz Centraal is deze open samenwerking essentieel bij het verantwoord innoveren met AI binnen de geestelijke gezondheidszorg.":
-    "GGz Centraal experiences its collaboration with Doodler as open, careful and constructive. Within the organisation, the Privacy and Information Security team at GGz Centraal has been involved in Doodler's development from the start. Whenever there are questions or points of attention, they are always discussed in a pleasant way, and we see Doodler respond decisively. What we really value about Doodler is that there is always transparency about the choices made. For GGz Centraal, this open collaboration is essential to innovating responsibly with AI in mental healthcare.",
+  "De samenwerking met Doodler ervaart GGz Centraal als open, zorgvuldig en constructief. Binnen de organisatie is het team: Privacy en Informatiebeveiliging binnen GGz Centraal vanaf het begin bij het ontwikkelproces van Doodler betrokken.\n\nWanneer er vragen en aandachtspunten zijn wordt dit altijd op een fijne manier besproken en zien wij dat Doodler hier met daadkracht op reageert. Wat wij erg waarderen aan Doodler is dat er ten alle tijden transparantie is over de gemaakte keuzes. Voor GGz Centraal is deze open samenwerking essentieel bij het verantwoord innoveren met AI binnen de geestelijke gezondheidszorg.":
+    "GGz Centraal experiences its collaboration with Doodler as open, careful and constructive. Within the organisation, the Privacy and Information Security team at GGz Centraal has been involved in Doodler's development from the start.\n\nWhenever there are questions or points of attention, they are always discussed in a pleasant way, and we see Doodler respond decisively. What we really value about Doodler is that there is always transparency about the choices made. For GGz Centraal, this open collaboration is essential to innovating responsibly with AI in mental healthcare.",
   "Anne-Aimée Wollerich, ISO & Privacy Officer GGz Centraal":
     "Anne-Aimée Wollerich, ISO & Privacy Officer, GGz Centraal",
 };

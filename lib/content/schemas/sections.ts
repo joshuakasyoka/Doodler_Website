@@ -80,14 +80,19 @@ export const logoStrip = section("logo-strip", {
 export const mediaBanner = section("media-banner", {
   heading: markup,
   lead: markup,
-  video,
-  signup: z.object({
-    label: text,
-    placeholder: text,
-    button: text,
-    /** The form the address is passed on to (as the Typeform hidden field `email`): the pilot report download. */
-    action: href,
-  }),
+  /** The backdrop: a photo, or a video when there is one (a photo wins if both are set). */
+  image: image.optional(),
+  video: video.optional(),
+  /** An email pill under the text; leave out for none. */
+  signup: z
+    .object({
+      label: text,
+      placeholder: text,
+      button: text,
+      /** The form the address is passed on to (as the Typeform hidden field `email`): the pilot report download. */
+      action: href,
+    })
+    .optional(),
 });
 
 export const proof = section("proof", {
@@ -202,6 +207,8 @@ export const statement = section("statement", {
   /** Drawn line above the block. */
   thread: thread.optional(),
   image: image.optional(),
+  /** large: the photo as a page's lead photo (520px) instead of the small manifest size (327px). */
+  imageSize: z.enum(["default", "large"]).optional(),
   lead: markup.optional(),
   /**
    * big: a large line (40px); title: as large as a section title (54px);

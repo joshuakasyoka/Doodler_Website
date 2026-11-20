@@ -71,7 +71,7 @@ export const overOns = {
       type: "people",
       id: "team",
       eyebrow: "Team",
-      heading: "Wie *Doodler* maakt",
+      heading: "Ons *team*",
       columns: 4,
       people: [
         {
@@ -147,7 +147,7 @@ export const overOns = {
       type: "people",
       id: "raad-van-advies",
       eyebrow: "Raad van advies",
-      heading: "Wie met ons *meedenkt*",
+      heading: "Experts die *met ons meedenken*",
       columns: 2,
       people: [
         {
@@ -181,7 +181,7 @@ export const overOns = {
       id: "werken-bij",
       size: "compact",
       icon: "pencils",
-      heading: "Wil je *meetekenen?*",
+      heading: "Wil jij *meedoodlen?*",
       lead: "Geen vacature die past? Schrijf ons toch: mayra@doodler.app",
       button: {
         label: "Stuur ons een e-mail",

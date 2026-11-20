@@ -22,7 +22,8 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
-    qualities: [75, 90],
+    // 60: photos behind a dark scrim and text (the banners); 75: default; 90: portraits
+    qualities: [60, 75, 90],
     deviceSizes: [360, 480, 640, 768, 1024, 1280, 1600, 1920],
     imageSizes: [32, 64, 96, 128, 256, 384],
     // only files under /public/images may be optimised

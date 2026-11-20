@@ -19,8 +19,8 @@ export function StatementSection({ section, context }: SectionProps<"statement">
             <Reveal>
               <Image
                 image={section.image}
-                layout="polaroid"
-                sizes="330px"
+                layout={section.imageSize === "large" ? "polaroid-lg" : "polaroid"}
+                sizes={section.imageSize === "large" ? "(min-width: 600px) 520px, 100vw" : "330px"}
                 priority={context.aboveFold}
                 photosHidden={context.photosHidden}
               />
